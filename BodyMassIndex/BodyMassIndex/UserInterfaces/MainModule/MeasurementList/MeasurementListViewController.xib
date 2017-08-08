@@ -11,15 +11,58 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeasurementListViewController">
             <connections>
+                <outlet property="emptyScreenPlaceholder" destination="It4-5h-zYl" id="97M-X1-RAj"/>
+                <outlet property="tableView" destination="7G6-6I-Igt" id="6UY-cU-V34"/>
                 <outlet property="view" destination="ygm-Mz-eRR" id="hXv-78-fJv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="ygm-Mz-eRR">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="64" width="375" height="554"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="It4-5h-zYl">
+                    <rect key="frame" x="67" y="169.5" width="240" height="215"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vigyél föl új mérést!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5R-Oi-zeQ">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="215"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="t5R-Oi-zeQ" secondAttribute="trailing" id="2MD-xf-beT"/>
+                        <constraint firstItem="t5R-Oi-zeQ" firstAttribute="top" secondItem="It4-5h-zYl" secondAttribute="top" id="6Ov-u3-vLw"/>
+                        <constraint firstAttribute="height" constant="215" id="Bma-Cg-J0B"/>
+                        <constraint firstItem="t5R-Oi-zeQ" firstAttribute="leading" secondItem="It4-5h-zYl" secondAttribute="leading" id="Y6V-97-RDX"/>
+                        <constraint firstAttribute="bottom" secondItem="t5R-Oi-zeQ" secondAttribute="bottom" id="oPv-bf-FMN"/>
+                        <constraint firstAttribute="width" constant="240" id="uBB-cP-kqf"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7G6-6I-Igt">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="WuS-R0-odZ"/>
+                        <outlet property="delegate" destination="-1" id="NCv-GQ-f25"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="0.4437840555" green="1" blue="0.61687597049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-146" y="121"/>
+            <constraints>
+                <constraint firstItem="7G6-6I-Igt" firstAttribute="leading" secondItem="ygm-Mz-eRR" secondAttribute="leading" id="5Tf-7X-iGL"/>
+                <constraint firstItem="7G6-6I-Igt" firstAttribute="top" secondItem="ygm-Mz-eRR" secondAttribute="top" id="7lB-Mw-W21"/>
+                <constraint firstAttribute="trailing" secondItem="7G6-6I-Igt" secondAttribute="trailing" id="Y1Z-GU-FdV"/>
+                <constraint firstAttribute="bottom" secondItem="7G6-6I-Igt" secondAttribute="bottom" id="fnJ-rs-XV9"/>
+                <constraint firstItem="It4-5h-zYl" firstAttribute="centerX" secondItem="ygm-Mz-eRR" secondAttribute="centerX" id="hDV-s0-69j"/>
+                <constraint firstItem="It4-5h-zYl" firstAttribute="centerY" secondItem="ygm-Mz-eRR" secondAttribute="centerY" id="yJf-aO-uUQ"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <point key="canvasLocation" x="-553" y="88"/>
         </view>
     </objects>
 </document>

@@ -12,4 +12,8 @@ protocol MeasurementListView: class {
 
     var eventHandler: MeasurementListEventHandler? {get set}
 
+    func showPlaceholder()
+    func showList()
+    
+    func refreshTableView()
 }

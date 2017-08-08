@@ -10,20 +10,6 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
-//TODO: move it into an Entity class
-struct Profile {
-    
-    var name: String
-    var isMale: Bool
-    var birthDate: String
-    var profilePicture: String
-    
-    static func defaultProfile() -> Profile {
-    
-        return Profile(name: "name", isMale: true, birthDate: "1986.08.08.", profilePicture: "asdasdsadas")
-    }
-}
-
 class FacebookService: NSObject {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {

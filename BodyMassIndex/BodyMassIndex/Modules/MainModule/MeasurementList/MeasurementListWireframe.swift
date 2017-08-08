@@ -14,6 +14,8 @@ class MeasurementListWireframe: MainModuleWireframe {
     fileprivate var presenter: MeasurementListPresenter?
 
     fileprivate var view = MeasurementListViewController()
+    
+    fileprivate var navigationController: UINavigationController!
 
     override init(mainModule: MainModule) {
         super.init(mainModule: mainModule)
@@ -23,11 +25,15 @@ class MeasurementListWireframe: MainModuleWireframe {
         self.view.eventHandler = self.presenter
         
         self.view.title = "MeasurementList"
+        
+        self.navigationController = UINavigationController(rootViewController: self.view)
+        self.navigationController.navigationBar.isTranslucent = false
     }
 
 // MARK: - Public methods
 
     func push(_ wireframe: Wireframe) {
+        
         self.view.navigationController?.pushViewController(wireframe.viewController(), animated: true)
     }
 }
@@ -37,7 +43,7 @@ class MeasurementListWireframe: MainModuleWireframe {
 extension MeasurementListWireframe: Wireframe {
 
     func viewController() -> UIViewController {
-        return self.view
+        return self.navigationController
     }
 }
 

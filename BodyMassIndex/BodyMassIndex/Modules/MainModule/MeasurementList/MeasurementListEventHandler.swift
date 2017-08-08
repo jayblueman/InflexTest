@@ -9,4 +9,14 @@
 import Foundation
 
 protocol MeasurementListEventHandler {
+    
+    func viewDidAppear()
+    
+    func numberOfElementsInTheList() -> Int
+    
+    func measurement(forIndex index: Int) -> Measurement
+    
+    func addMeasurementButtonPressed()
+
+    func removeMeasurement(atIndex index: Int)
 }

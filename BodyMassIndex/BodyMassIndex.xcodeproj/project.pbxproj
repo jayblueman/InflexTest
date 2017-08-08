@@ -25,6 +25,11 @@
 		B14AD0781F39AC8B00C2C280 /* ProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0731F39AC8B00C2C280 /* ProfileWireframe.swift */; };
 		B14AD07C1F39AC9C00C2C280 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD07A1F39AC9C00C2C280 /* ProfileViewController.swift */; };
 		B14AD07D1F39AC9C00C2C280 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14AD07B1F39AC9C00C2C280 /* ProfileViewController.xib */; };
+		B14AD07F1F39B47000C2C280 /* MeasurementListDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD07E1F39B47000C2C280 /* MeasurementListDataInteractor.swift */; };
+		B14AD0821F39B64200C2C280 /* MeasurementListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0801F39B64200C2C280 /* MeasurementListCellTableViewCell.swift */; };
+		B14AD0831F39B64200C2C280 /* MeasurementListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14AD0811F39B64200C2C280 /* MeasurementListCellTableViewCell.xib */; };
+		B14AD0861F39BC1600C2C280 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0851F39BC1600C2C280 /* DateExtension.swift */; };
+		B14AD0891F39D0B800C2C280 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0881F39D0B800C2C280 /* Profile.swift */; };
 		B1A6772E1F38698300B4B3ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6772D1F38698300B4B3ED /* AppDelegate.swift */; };
 		B1A677351F38698300B4B3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A677341F38698300B4B3ED /* Assets.xcassets */; };
 		B1A677381F38698300B4B3ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A677361F38698300B4B3ED /* LaunchScreen.storyboard */; };
@@ -73,6 +78,12 @@
 		B14AD0731F39AC8B00C2C280 /* ProfileWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWireframe.swift; sourceTree = "<group>"; };
 		B14AD07A1F39AC9C00C2C280 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B14AD07B1F39AC9C00C2C280 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		B14AD07E1F39B47000C2C280 /* MeasurementListDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListDataInteractor.swift; sourceTree = "<group>"; };
+		B14AD0801F39B64200C2C280 /* MeasurementListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListCellTableViewCell.swift; sourceTree = "<group>"; };
+		B14AD0811F39B64200C2C280 /* MeasurementListCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeasurementListCellTableViewCell.xib; sourceTree = "<group>"; };
+		B14AD0851F39BC1600C2C280 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		B14AD0871F39BCCA00C2C280 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		B14AD0881F39D0B800C2C280 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		B1A6772A1F38698300B4B3ED /* BodyMassIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyMassIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A6772D1F38698300B4B3ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A677341F38698300B4B3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +161,7 @@
 				B14AD05C1F39A58B00C2C280 /* MeasurementListRouter.swift */,
 				B14AD05D1F39A58B00C2C280 /* MeasurementListView.swift */,
 				B14AD05E1F39A58B00C2C280 /* MeasurementListWireframe.swift */,
+				B14AD07E1F39B47000C2C280 /* MeasurementListDataInteractor.swift */,
 			);
 			path = MeasurementList;
 			sourceTree = "<group>";
@@ -168,6 +180,8 @@
 			children = (
 				B14AD0661F39A59700C2C280 /* MeasurementListViewController.swift */,
 				B14AD0671F39A59700C2C280 /* MeasurementListViewController.xib */,
+				B14AD0801F39B64200C2C280 /* MeasurementListCellTableViewCell.swift */,
+				B14AD0811F39B64200C2C280 /* MeasurementListCellTableViewCell.xib */,
 			);
 			path = MeasurementList;
 			sourceTree = "<group>";
@@ -191,6 +205,14 @@
 				B14AD07B1F39AC9C00C2C280 /* ProfileViewController.xib */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B14AD0841F39BC0200C2C280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B14AD0851F39BC1600C2C280 /* DateExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B1A677211F38698300B4B3ED = {
@@ -217,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				B1A6774D1F386B7C00B4B3ED /* Entities */,
+				B14AD0841F39BC0200C2C280 /* Extensions */,
 				B1A6774E1F386B7C00B4B3ED /* Managers */,
 				B1A677501F386B7C00B4B3ED /* Modules */,
 				B1A6775C1F386B7C00B4B3ED /* UserInterfaces */,
@@ -225,6 +248,7 @@
 				B1A677341F38698300B4B3ED /* Assets.xcassets */,
 				B1A677361F38698300B4B3ED /* LaunchScreen.storyboard */,
 				B1A677391F38698300B4B3ED /* Info.plist */,
+				B14AD0871F39BCCA00C2C280 /* MyPlayground.playground */,
 			);
 			path = BodyMassIndex;
 			sourceTree = "<group>";
@@ -241,6 +265,7 @@
 		B1A6774D1F386B7C00B4B3ED /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				B14AD0881F39D0B800C2C280 /* Profile.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -419,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B14AD0831F39B64200C2C280 /* MeasurementListCellTableViewCell.xib in Resources */,
 				B1A677381F38698300B4B3ED /* LaunchScreen.storyboard in Resources */,
 				B14AD0691F39A59700C2C280 /* MeasurementListViewController.xib in Resources */,
 				B1A677731F386B7D00B4B3ED /* WelcomeViewController.xib in Resources */,
@@ -535,12 +561,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14AD0761F39AC8B00C2C280 /* ProfileRouter.swift in Sources */,
+				B14AD0861F39BC1600C2C280 /* DateExtension.swift in Sources */,
+				B14AD07F1F39B47000C2C280 /* MeasurementListDataInteractor.swift in Sources */,
 				B1A6776D1F386B7D00B4B3ED /* WelcomeEventHandler.swift in Sources */,
 				B14AD0751F39AC8B00C2C280 /* ProfilePresenter.swift in Sources */,
 				B1A6776E1F386B7D00B4B3ED /* WelcomePresenter.swift in Sources */,
 				B1A6776F1F386B7D00B4B3ED /* WelcomeRouter.swift in Sources */,
 				B1A677681F386B7C00B4B3ED /* ModuleManager.swift in Sources */,
 				B14AD07C1F39AC9C00C2C280 /* ProfileViewController.swift in Sources */,
+				B14AD0891F39D0B800C2C280 /* Profile.swift in Sources */,
 				B1A6776B1F386B7D00B4B3ED /* WelcomeModuleWireframe.swift in Sources */,
 				B14AD0771F39AC8B00C2C280 /* ProfileView.swift in Sources */,
 				B1A677721F386B7D00B4B3ED /* WelcomeViewController.swift in Sources */,
@@ -560,6 +589,7 @@
 				B1A6776A1F386B7D00B4B3ED /* Wireframe.swift in Sources */,
 				B1A677711F386B7D00B4B3ED /* WelcomeWireframe.swift in Sources */,
 				B14AD06C1F39A5FD00C2C280 /* MainModule.swift in Sources */,
+				B14AD0821F39B64200C2C280 /* MeasurementListCellTableViewCell.swift in Sources */,
 				B1A677841F38A1BF00B4B3ED /* FacebookService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,9 +19,12 @@ class MainModule: Module {
     override func initModule() {
         
         self.measurementListWireframe = MeasurementListWireframe(mainModule: self)
+        
         self.profileWireframe = ProfileWireframe(mainModule: self)
         
         self.tabBarController = UITabBarController()
+        
+        self.tabBarController.tabBar.isTranslucent = false
         
         self.tabBarController.viewControllers = [self.measurementListWireframe.viewController(), self.profileWireframe.viewController()]
     }
