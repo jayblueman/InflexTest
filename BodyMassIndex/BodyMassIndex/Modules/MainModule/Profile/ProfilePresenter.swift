@@ -23,4 +23,22 @@ class ProfilePresenter {
 }
 
 extension ProfilePresenter: ProfileEventHandler {
+    
+    func didTapOnBackground() {
+        self.view?.hideKeyboard()
+    }
+    
+    func viewDidLoad() {
+        self.view?.updateContent()
+    }
+    
+    func keyboardWillAppearOnScreen() {
+        
+        self.view?.moveContainerUpwards()
+    }
+    
+    func keyboardWillDisappearFromScreen() {
+        
+        self.view?.moveContainerDownwards()
+    }
 }

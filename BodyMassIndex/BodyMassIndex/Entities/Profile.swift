@@ -13,11 +13,12 @@ struct Profile {
     var name: String
     var isMale: Bool
     var birthDate: String
+    var weight: Int
     var profilePicture: String
     var height: Double
     
     static func defaultProfile() -> Profile {
         
-        return Profile(name: "name", isMale: true, birthDate: "1986.08.08.", profilePicture: "asdasdsadas", height: 1.76)
+        return Profile(name: "name", isMale: true, birthDate: "1986.08.08.", weight: 85, profilePicture: "asdasdsadas", height: 1.76)
     }
 }

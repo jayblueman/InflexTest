@@ -12,6 +12,8 @@ protocol MeasurementListEventHandler {
     
     func viewDidAppear()
     
+    func viewWillAppear()
+    
     func numberOfElementsInTheList() -> Int
     
     func measurement(forIndex index: Int) -> Measurement

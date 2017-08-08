@@ -31,6 +31,12 @@ class MeasurementListViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.eventHandler?.viewWillAppear()
+    }
+    
     func addButtonPressed() {
         
         self.eventHandler?.addMeasurementButtonPressed()

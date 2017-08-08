@@ -9,4 +9,12 @@
 import Foundation
 
 protocol ProfileEventHandler {
+    
+    func didTapOnBackground()
+    
+    func viewDidLoad()
+    
+    func keyboardWillAppearOnScreen()
+    
+    func keyboardWillDisappearFromScreen()
 }

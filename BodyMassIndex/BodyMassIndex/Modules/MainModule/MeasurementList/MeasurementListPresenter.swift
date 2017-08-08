@@ -35,6 +35,11 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
         
     }
     
+    func viewWillAppear() {
+        
+        self.view?.refreshTableView()
+    }
+    
     func numberOfElementsInTheList() -> Int {
         
         return self.measurements.count

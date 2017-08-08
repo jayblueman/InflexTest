@@ -12,4 +12,11 @@ protocol ProfileView: class {
 
     var eventHandler: ProfileEventHandler? {get set}
 
+    func hideKeyboard()
+    
+    func moveContainerUpwards()
+    
+    func moveContainerDownwards()
+    
+    func updateContent()
 }
