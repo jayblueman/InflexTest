@@ -31,6 +31,13 @@
 		B14AD0861F39BC1600C2C280 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0851F39BC1600C2C280 /* DateExtension.swift */; };
 		B14AD0891F39D0B800C2C280 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0881F39D0B800C2C280 /* Profile.swift */; };
 		B14AD08B1F39F8CE00C2C280 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD08A1F39F8CE00C2C280 /* ProfileManager.swift */; };
+		B14AD0921F39FCE300C2C280 /* AddMeasurementEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD08D1F39FCE300C2C280 /* AddMeasurementEventHandler.swift */; };
+		B14AD0931F39FCE300C2C280 /* AddMeasurementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD08E1F39FCE300C2C280 /* AddMeasurementPresenter.swift */; };
+		B14AD0941F39FCE300C2C280 /* AddMeasurementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD08F1F39FCE300C2C280 /* AddMeasurementRouter.swift */; };
+		B14AD0951F39FCE300C2C280 /* AddMeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0901F39FCE300C2C280 /* AddMeasurementView.swift */; };
+		B14AD0961F39FCE300C2C280 /* AddMeasurementWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0911F39FCE300C2C280 /* AddMeasurementWireframe.swift */; };
+		B14AD09A1F39FCF400C2C280 /* AddMeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD0981F39FCF400C2C280 /* AddMeasurementViewController.swift */; };
+		B14AD09B1F39FCF400C2C280 /* AddMeasurementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14AD0991F39FCF400C2C280 /* AddMeasurementViewController.xib */; };
 		B1A6772E1F38698300B4B3ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6772D1F38698300B4B3ED /* AppDelegate.swift */; };
 		B1A677351F38698300B4B3ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A677341F38698300B4B3ED /* Assets.xcassets */; };
 		B1A677381F38698300B4B3ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A677361F38698300B4B3ED /* LaunchScreen.storyboard */; };
@@ -86,6 +93,13 @@
 		B14AD0871F39BCCA00C2C280 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		B14AD0881F39D0B800C2C280 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		B14AD08A1F39F8CE00C2C280 /* ProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		B14AD08D1F39FCE300C2C280 /* AddMeasurementEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementEventHandler.swift; sourceTree = "<group>"; };
+		B14AD08E1F39FCE300C2C280 /* AddMeasurementPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementPresenter.swift; sourceTree = "<group>"; };
+		B14AD08F1F39FCE300C2C280 /* AddMeasurementRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementRouter.swift; sourceTree = "<group>"; };
+		B14AD0901F39FCE300C2C280 /* AddMeasurementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementView.swift; sourceTree = "<group>"; };
+		B14AD0911F39FCE300C2C280 /* AddMeasurementWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementWireframe.swift; sourceTree = "<group>"; };
+		B14AD0981F39FCF400C2C280 /* AddMeasurementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementViewController.swift; sourceTree = "<group>"; };
+		B14AD0991F39FCF400C2C280 /* AddMeasurementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeasurementViewController.xib; sourceTree = "<group>"; };
 		B1A6772A1F38698300B4B3ED /* BodyMassIndex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyMassIndex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A6772D1F38698300B4B3ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A677341F38698300B4B3ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +163,7 @@
 			children = (
 				B14AD06A1F39A5FD00C2C280 /* MainModule.swift */,
 				B14AD06B1F39A5FD00C2C280 /* MainModuleWireframe.swift */,
+				B14AD08C1F39FCE300C2C280 /* AddMeasurement */,
 				B14AD0591F39A58B00C2C280 /* MeasurementList */,
 				B14AD06E1F39AC8B00C2C280 /* Profile */,
 			);
@@ -171,6 +186,7 @@
 		B14AD0641F39A59700C2C280 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				B14AD0971F39FCF400C2C280 /* AddMeasurement */,
 				B14AD0651F39A59700C2C280 /* MeasurementList */,
 				B14AD0791F39AC9C00C2C280 /* Profile */,
 			);
@@ -215,6 +231,27 @@
 				B14AD0851F39BC1600C2C280 /* DateExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B14AD08C1F39FCE300C2C280 /* AddMeasurement */ = {
+			isa = PBXGroup;
+			children = (
+				B14AD08D1F39FCE300C2C280 /* AddMeasurementEventHandler.swift */,
+				B14AD08E1F39FCE300C2C280 /* AddMeasurementPresenter.swift */,
+				B14AD08F1F39FCE300C2C280 /* AddMeasurementRouter.swift */,
+				B14AD0901F39FCE300C2C280 /* AddMeasurementView.swift */,
+				B14AD0911F39FCE300C2C280 /* AddMeasurementWireframe.swift */,
+			);
+			path = AddMeasurement;
+			sourceTree = "<group>";
+		};
+		B14AD0971F39FCF400C2C280 /* AddMeasurement */ = {
+			isa = PBXGroup;
+			children = (
+				B14AD0981F39FCF400C2C280 /* AddMeasurementViewController.swift */,
+				B14AD0991F39FCF400C2C280 /* AddMeasurementViewController.xib */,
+			);
+			path = AddMeasurement;
 			sourceTree = "<group>";
 		};
 		B1A677211F38698300B4B3ED = {
@@ -451,6 +488,7 @@
 				B1A677381F38698300B4B3ED /* LaunchScreen.storyboard in Resources */,
 				B14AD0691F39A59700C2C280 /* MeasurementListViewController.xib in Resources */,
 				B1A677731F386B7D00B4B3ED /* WelcomeViewController.xib in Resources */,
+				B14AD09B1F39FCF400C2C280 /* AddMeasurementViewController.xib in Resources */,
 				B14AD07D1F39AC9C00C2C280 /* ProfileViewController.xib in Resources */,
 				B1A677351F38698300B4B3ED /* Assets.xcassets in Resources */,
 			);
@@ -567,9 +605,11 @@
 				B14AD0861F39BC1600C2C280 /* DateExtension.swift in Sources */,
 				B14AD07F1F39B47000C2C280 /* MeasurementListDataInteractor.swift in Sources */,
 				B1A6776D1F386B7D00B4B3ED /* WelcomeEventHandler.swift in Sources */,
+				B14AD0941F39FCE300C2C280 /* AddMeasurementRouter.swift in Sources */,
 				B14AD0751F39AC8B00C2C280 /* ProfilePresenter.swift in Sources */,
 				B1A6776E1F386B7D00B4B3ED /* WelcomePresenter.swift in Sources */,
 				B1A6776F1F386B7D00B4B3ED /* WelcomeRouter.swift in Sources */,
+				B14AD0931F39FCE300C2C280 /* AddMeasurementPresenter.swift in Sources */,
 				B1A677681F386B7C00B4B3ED /* ModuleManager.swift in Sources */,
 				B14AD07C1F39AC9C00C2C280 /* ProfileViewController.swift in Sources */,
 				B14AD0891F39D0B800C2C280 /* Profile.swift in Sources */,
@@ -578,6 +618,7 @@
 				B1A677721F386B7D00B4B3ED /* WelcomeViewController.swift in Sources */,
 				B1A677701F386B7D00B4B3ED /* WelcomeView.swift in Sources */,
 				B14AD0601F39A58B00C2C280 /* MeasurementListPresenter.swift in Sources */,
+				B14AD0951F39FCE300C2C280 /* AddMeasurementView.swift in Sources */,
 				B1A677691F386B7C00B4B3ED /* Module.swift in Sources */,
 				B14AD0781F39AC8B00C2C280 /* ProfileWireframe.swift in Sources */,
 				B14AD0681F39A59700C2C280 /* MeasurementListViewController.swift in Sources */,
@@ -593,7 +634,10 @@
 				B14AD08B1F39F8CE00C2C280 /* ProfileManager.swift in Sources */,
 				B1A677711F386B7D00B4B3ED /* WelcomeWireframe.swift in Sources */,
 				B14AD06C1F39A5FD00C2C280 /* MainModule.swift in Sources */,
+				B14AD0921F39FCE300C2C280 /* AddMeasurementEventHandler.swift in Sources */,
 				B14AD0821F39B64200C2C280 /* MeasurementListCellTableViewCell.swift in Sources */,
+				B14AD09A1F39FCF400C2C280 /* AddMeasurementViewController.swift in Sources */,
+				B14AD0961F39FCE300C2C280 /* AddMeasurementWireframe.swift in Sources */,
 				B1A677841F38A1BF00B4B3ED /* FacebookService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,8 @@ class MeasurementListWireframe: MainModuleWireframe {
 
     fileprivate var view = MeasurementListViewController()
     
+    fileprivate var addMeasurementWireframe: AddMeasurementWireframe?
+    
     fileprivate var navigationController: UINavigationController!
 
     override init(mainModule: MainModule) {
@@ -50,4 +52,21 @@ extension MeasurementListWireframe: Wireframe {
 // MARK: - MeasurementListRouter protocol methods
 
 extension MeasurementListWireframe: MeasurementListRouter {
+    
+    func showAddMeasurement() {
+        
+        self.addMeasurementWireframe = nil
+        
+        guard let mainModule = self.mainModule else {
+            return
+        }
+        
+        self.addMeasurementWireframe = AddMeasurementWireframe(mainModule: mainModule)
+        
+        guard let addMeasurementWireframe = self.addMeasurementWireframe else {
+            return
+        }
+        
+        self.push(addMeasurementWireframe)
+    }
 }

@@ -10,6 +10,8 @@ import Foundation
 
 protocol ProfileEventHandler {
     
+    func textFieldTextDidChange(textFieldText: String)
+    
     func didTapOnBackground()
     
     func viewDidLoad()

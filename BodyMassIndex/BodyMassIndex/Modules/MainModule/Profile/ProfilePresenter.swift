@@ -24,7 +24,13 @@ class ProfilePresenter {
 
 extension ProfilePresenter: ProfileEventHandler {
     
+    func textFieldTextDidChange(textFieldText: String) {
+        
+        ProfileManager.shared.profile?.height = (Double(textFieldText) ?? 0.0) / 100.0
+    }
+    
     func didTapOnBackground() {
+        
         self.view?.hideKeyboard()
     }
     

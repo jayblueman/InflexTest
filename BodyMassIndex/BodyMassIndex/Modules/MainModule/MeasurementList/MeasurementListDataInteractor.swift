@@ -15,7 +15,7 @@ struct Measurement {
     
     var bmi: Double {
         
-        let profile = Profile.defaultProfile()
+        let profile = ProfileManager.shared.profile ?? Profile.defaultProfile()
         
         return ((self.weight / profile.height) / profile.height)
     }

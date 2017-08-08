@@ -52,9 +52,7 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
     
     func addMeasurementButtonPressed() {
         
-        self.measurements.append(Measurement(date: Date(), weight: 46))
-        
-        self.view?.refreshTableView()
+        self.router?.showAddMeasurement()
     }
     
     func removeMeasurement(atIndex index: Int) {

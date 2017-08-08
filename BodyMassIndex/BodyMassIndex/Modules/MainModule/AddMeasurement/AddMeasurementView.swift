@@ -1,5 +1,5 @@
 //
-//  MeasurementListRouter.swift
+//  AddMeasurementView.swift
 //  BodyMassIndex
 //
 //  Created by Adrian Juhasz on 2017. 08. 08.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol MeasurementListRouter: class {
-    
-    func showAddMeasurement()
+protocol AddMeasurementView: class {
+
+    var eventHandler: AddMeasurementEventHandler? {get set}
+
 }

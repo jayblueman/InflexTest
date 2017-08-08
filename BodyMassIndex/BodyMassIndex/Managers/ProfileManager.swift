@@ -12,7 +12,7 @@ class ProfileManager {
 
     static let shared = ProfileManager()
     
-    fileprivate(set) var profile: Profile?
+    var profile: Profile?
     
     private init() {
         

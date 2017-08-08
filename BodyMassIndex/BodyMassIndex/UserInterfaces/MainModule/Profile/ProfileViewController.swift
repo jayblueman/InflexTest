@@ -27,11 +27,18 @@ class ProfileViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
         
         self.eventHandler?.viewDidLoad()
+        
+        self.profileHeightTextField.addTarget(self, action: #selector(textFieldTextDidChange), for: .editingChanged)
     }
     
     func didTapOnBackground() {
         
         self.eventHandler?.didTapOnBackground()
+    }
+    
+    func textFieldTextDidChange() {
+        
+        self.eventHandler?.textFieldTextDidChange(textFieldText: self.profileHeightTextField.text ?? "")
     }
 }
 
