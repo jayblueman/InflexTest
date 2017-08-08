@@ -70,7 +70,7 @@ class ModuleManager {
             module = WelcomeModule(moduleManager: self)
             
         case .main:
-            module = WelcomeModule(moduleManager: self)
+            module = MainModule(moduleManager: self)
         }
         
         return module

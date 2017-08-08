@@ -1,0 +1,47 @@
+//
+//  MeasurementListWireframe.swift
+//  BodyMassIndex
+//
+//  Created by Adrian Juhasz on 2017. 08. 08.
+//  Copyright © 2017. TestCompany. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class MeasurementListWireframe: MainModuleWireframe {
+
+    fileprivate var presenter: MeasurementListPresenter?
+
+    fileprivate var view = MeasurementListViewController()
+
+    override init(mainModule: MainModule) {
+        super.init(mainModule: mainModule)
+
+        self.presenter = MeasurementListPresenter(view: self.view, router: self)
+
+        self.view.eventHandler = self.presenter
+        
+        self.view.title = "MeasurementList"
+    }
+
+// MARK: - Public methods
+
+    func push(_ wireframe: Wireframe) {
+        self.view.navigationController?.pushViewController(wireframe.viewController(), animated: true)
+    }
+}
+
+// MARK: - Wireframe protocol methods
+
+extension MeasurementListWireframe: Wireframe {
+
+    func viewController() -> UIViewController {
+        return self.view
+    }
+}
+
+// MARK: - MeasurementListRouter protocol methods
+
+extension MeasurementListWireframe: MeasurementListRouter {
+}

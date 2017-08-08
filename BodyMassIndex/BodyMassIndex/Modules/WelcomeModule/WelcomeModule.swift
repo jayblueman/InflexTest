@@ -1,5 +1,5 @@
 //
-//  SplashModule.swift
+//  WelcomeModule.swift
 //  BodyMassIndex
 //
 //  Created by Adrian Juhasz on 2017. 08. 07.
@@ -28,6 +28,11 @@ extension WelcomeModule: ModuleProtocol {
     func rootWireframe() -> Wireframe {
         
         return self.welcomeWireframe
+    }
+    
+    func rootViewController() -> UIViewController {
+        
+        return self.welcomeWireframe.viewController()
     }
     
     func cleanUp() {

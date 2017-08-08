@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var moduleManager : ModuleManager!
-    var rootWireframe: Wireframe {
+    var rootViewController: UIViewController {
         
-        return self.moduleManager.currentModule.rootWireframe()
+        return self.moduleManager.currentModule.rootViewController()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.moduleManager = ModuleManager(startState: .welcome, delegate: self)
         
-        let rootNavigationController = UINavigationController(rootViewController: self.rootWireframe.viewController())
+        let rootNavigationController = UINavigationController(rootViewController: self.rootViewController)
         rootNavigationController.isNavigationBarHidden  = true
         self.window?.rootViewController = rootNavigationController
         
@@ -46,7 +46,7 @@ extension AppDelegate : ModuleManagerDelegate
     {
         if let navigationController = self.window?.rootViewController as? UINavigationController {
             
-            navigationController.setViewControllers([self.rootWireframe.viewController()], animated: true)
+            navigationController.setViewControllers([self.rootViewController], animated: true)
         }
     }
 }

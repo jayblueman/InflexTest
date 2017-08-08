@@ -1,5 +1,5 @@
 //
-//  SplashModuleWireframe.swift
+//  WelcomeModuleWireframe.swift
 //  BodyMassIndex
 //
 //  Created by Adrian Juhasz on 2017. 08. 07.
