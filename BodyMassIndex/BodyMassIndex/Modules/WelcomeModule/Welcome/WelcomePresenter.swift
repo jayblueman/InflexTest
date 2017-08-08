@@ -26,5 +26,13 @@ extension WelcomePresenter: WelcomeEventHandler {
     
     func loginButtonPressed() {
         //facebook login
+        
+        FacebookService().login { (isSuccessful, profile) in
+            
+            if isSuccessful {
+                
+                self.router?.showMainScreen()
+            }
+        }
     }
 }

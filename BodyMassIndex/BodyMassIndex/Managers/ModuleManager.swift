@@ -11,6 +11,7 @@ import UIKit
 enum AppState {
     
     case welcome
+    case main
 }
 
 protocol ModuleManagerDelegate: NSObjectProtocol {
@@ -66,6 +67,9 @@ class ModuleManager {
             
         case .welcome:
             
+            module = WelcomeModule(moduleManager: self)
+            
+        case .main:
             module = WelcomeModule(moduleManager: self)
         }
         

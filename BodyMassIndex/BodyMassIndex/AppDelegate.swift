@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
+        FacebookService().application(application: application, didFinishLaunchingWithOptions: launchOptions)
+        
         return true
     }
 }
@@ -42,6 +44,9 @@ extension AppDelegate : ModuleManagerDelegate
 {
     func moduleDidChange(currentModule: ModuleProtocol, animated: Bool)
     {
-        
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            
+            navigationController.setViewControllers([self.rootWireframe.viewController()], animated: true)
+        }
     }
 }

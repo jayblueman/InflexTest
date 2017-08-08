@@ -42,4 +42,9 @@ extension WelcomeWireframe: Wireframe {
 // MARK: - WelcomeRouter protocol methods
 
 extension WelcomeWireframe: WelcomeRouter {
+    
+    func showMainScreen() {
+        
+        self.welcomeModule?.loginSuccessful()
+    }
 }

@@ -16,6 +16,11 @@ class WelcomeModule: Module {
         
         self.welcomeWireframe = WelcomeWireframe(welcomeModule: self)
     }
+    
+    func loginSuccessful() {
+        
+        self.moduleManager.setApp(toState: .main)
+    }
 }
 
 extension WelcomeModule: ModuleProtocol {

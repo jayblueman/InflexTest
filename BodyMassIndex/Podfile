@@ -7,8 +7,8 @@ target 'BodyMassIndex' do
 
   # Pods for BodyMassIndex
 
-	pod 'Firebase', '~> 4.0.4'
-	pod 'Facebook-iOS-SDK', '~> 4.1.0'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
 
   target 'BodyMassIndexTests' do
     inherit! :search_paths

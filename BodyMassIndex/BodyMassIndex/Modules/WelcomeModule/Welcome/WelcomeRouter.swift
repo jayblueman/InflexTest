@@ -9,4 +9,6 @@
 import Foundation
 
 protocol WelcomeRouter: class {
+    
+    func showMainScreen()
 }
