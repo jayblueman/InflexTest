@@ -65,6 +65,7 @@
 		B1D76FF21F3DB7FD00698299 /* LoadingIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D76FF11F3DB7FD00698299 /* LoadingIndicatorView.xib */; };
 		B1D76FF41F3DB81900698299 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FF31F3DB81900698299 /* LoadingIndicator.swift */; };
 		B1D76FF61F3DBC5900698299 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FF51F3DBC5900698299 /* CommonView.swift */; };
+		B1D76FF81F3DC82C00698299 /* WelcomeDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FF71F3DC82C00698299 /* WelcomeDataInteractor.swift */; };
 		B1DAE22D1F3CB391002043F3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAE22C1F3CB391002043F3 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +143,7 @@
 		B1D76FF11F3DB7FD00698299 /* LoadingIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingIndicatorView.xib; sourceTree = "<group>"; };
 		B1D76FF31F3DB81900698299 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		B1D76FF51F3DBC5900698299 /* CommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
+		B1D76FF71F3DC82C00698299 /* WelcomeDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeDataInteractor.swift; sourceTree = "<group>"; };
 		B1DAE22C1F3CB391002043F3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C71A015AF582682AF96E4273 /* Pods-BodyMassIndexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyMassIndexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyMassIndexTests/Pods-BodyMassIndexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E26BCD2E49E653FB11F79039 /* Pods-BodyMassIndex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyMassIndex.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyMassIndex/Pods-BodyMassIndex.release.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				B1A677591F386B7C00B4B3ED /* WelcomeRouter.swift */,
 				B1A6775A1F386B7C00B4B3ED /* WelcomeView.swift */,
 				B1A6775B1F386B7C00B4B3ED /* WelcomeWireframe.swift */,
+				B1D76FF71F3DC82C00698299 /* WelcomeDataInteractor.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				B1A6776A1F386B7D00B4B3ED /* Wireframe.swift in Sources */,
 				B14AD08B1F39F8CE00C2C280 /* ProfileManager.swift in Sources */,
 				B1A677711F386B7D00B4B3ED /* WelcomeWireframe.swift in Sources */,
+				B1D76FF81F3DC82C00698299 /* WelcomeDataInteractor.swift in Sources */,
 				B14AD06C1F39A5FD00C2C280 /* MainModule.swift in Sources */,
 				B14AD0921F39FCE300C2C280 /* AddMeasurementEventHandler.swift in Sources */,
 				B14AD0821F39B64200C2C280 /* MeasurementListCellTableViewCell.swift in Sources */,
