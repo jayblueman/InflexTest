@@ -19,6 +19,8 @@ protocol MeasurementListEventHandler {
     func measurement(forIndex index: Int) -> Measurement
     
     func addMeasurementButtonPressed()
+    
+    func refreshButtonPressed()
 
     func removeMeasurement(atIndex index: Int)
 }

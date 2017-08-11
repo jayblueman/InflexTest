@@ -11,6 +11,7 @@ import UIKit
 class MeasurementListViewController: UIViewController {
 
     @IBOutlet weak var emptyScreenPlaceholder: UIView!
+    @IBOutlet weak var placeHolderTextLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +23,8 @@ class MeasurementListViewController: UIViewController {
         self.tableView.register(UINib(nibName: "MeasurementListCellTableViewCell", bundle: nil), forCellReuseIdentifier: MeasurementListCellTableViewCell.identifier())
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(addButtonPressed))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(refreshButtonPressed))
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
         self.view.addGestureRecognizer(longPressRecognizer)
@@ -48,6 +51,11 @@ class MeasurementListViewController: UIViewController {
         self.eventHandler?.addMeasurementButtonPressed()
     }
     
+    func refreshButtonPressed() {
+        
+        self.eventHandler?.refreshButtonPressed()
+    }
+    
     //Called, when long press occurred
     func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         
@@ -64,11 +72,13 @@ class MeasurementListViewController: UIViewController {
 
 extension MeasurementListViewController: MeasurementListView {
     
-    func showPlaceholder() {
+    func showPlaceholder(withText text: String) {
         
         self.emptyScreenPlaceholder.isHidden = false
         
         self.tableView.isHidden = true
+        
+        self.placeHolderTextLabel.text = text
     }
     
     func showList() {
@@ -81,6 +91,14 @@ extension MeasurementListViewController: MeasurementListView {
     func refreshTableView() {
         
         self.tableView.reloadData()
+    }
+    
+    func disableAddButton() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+    
+    func enableAddButton() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
 }
 

@@ -9,12 +9,14 @@
 import Foundation
 
 protocol AddMeasurementDataInteractorResult : class {
+
+    func measurementDidStored()
     
-    func measurementStoreStarted()
+    func measurementStoreFailed()
     
-    func measurementStored()
+    func profileUpdated()
     
-    func measurementFailedToStore()
+    func profileUpdateFailed()
 }
 
 class AddMeasurementDataInteractor {
@@ -25,7 +27,15 @@ class AddMeasurementDataInteractor {
         
         FirebaseService.addMeasurement(measurement: measurement) { [unowned self] (isSuccess: Bool) in
             
-            isSuccess ? self.presenter?.measurementStored() : self.presenter?.measurementFailedToStore()
+            isSuccess ? self.presenter?.measurementDidStored() : self.presenter?.measurementStoreFailed()
+        }
+    }
+    
+    func updateProfiel() {
+        
+        FirebaseService.updateProfileData { (isSuccess: Bool) in
+            
+            isSuccess ? self.presenter?.profileUpdated() : self.presenter?.profileUpdateFailed()
         }
     }
 }

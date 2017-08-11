@@ -28,9 +28,13 @@ class ProfileViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnBackground))
         self.view.addGestureRecognizer(tapGesture)
         
-        self.eventHandler?.viewDidLoad()
-        
         self.profileHeightTextField.addTarget(self, action: #selector(textFieldTextDidChange), for: .editingChanged)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.eventHandler?.viewDidAppear()
     }
     
     @IBAction func saveProfileButtonPressed(_ sender: Any) {

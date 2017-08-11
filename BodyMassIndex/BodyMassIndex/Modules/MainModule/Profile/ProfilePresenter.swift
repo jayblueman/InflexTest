@@ -47,7 +47,7 @@ extension ProfilePresenter: ProfileEventHandler {
         self.view?.hideKeyboard()
     }
     
-    func viewDidLoad() {
+    func viewDidAppear() {
         
         self.view?.updateContent()
     }

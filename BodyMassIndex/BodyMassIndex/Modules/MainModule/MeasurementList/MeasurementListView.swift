@@ -12,8 +12,13 @@ protocol MeasurementListView: CommonView {
 
     var eventHandler: MeasurementListEventHandler? {get set}
 
-    func showPlaceholder()
+    func showPlaceholder(withText text: String)
+    
     func showList()
     
     func refreshTableView()
+    
+    func enableAddButton()
+    
+    func disableAddButton()
 }

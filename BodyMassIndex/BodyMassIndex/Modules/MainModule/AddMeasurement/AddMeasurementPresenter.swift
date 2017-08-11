@@ -30,7 +30,7 @@ class AddMeasurementPresenter {
         
         var isValidData = true
         
-        if self.measurementToSave.weight == 0.0{
+        if self.measurementToSave.weight == 0 {
             isValidData = false
         }
         
@@ -50,10 +50,10 @@ extension AddMeasurementPresenter: AddMeasurementEventHandler {
     
     func textFieldTextDidChange(text: String) {
         
-        var weightDouble = Double(text) ?? 0.0
+        var weightDouble = Int(text) ?? 0
         
-        if weightDouble < 0.0 {
-            weightDouble = 0.0
+        if weightDouble < 0 {
+            weightDouble = 0
         }
         
         self.measurementToSave.weight = weightDouble
@@ -68,28 +68,52 @@ extension AddMeasurementPresenter: AddMeasurementEventHandler {
     
     func addButtonPressed() {
         
+        self.view?.showLoader()
+        
         self.addMeasurementDataInteractor.store(measurement: self.measurementToSave)
     }
 }
 
 extension AddMeasurementPresenter: AddMeasurementDataInteractorResult {
     
-    func measurementStoreStarted() {
+    func measurementDidStored() {
         
-        self.view?.showLoader()
+        if self.measurementToSave.date.isToday() {
+            
+            ProfileManager.shared.profile?.weight = self.measurementToSave.weight
+            
+            self.addMeasurementDataInteractor.updateProfiel()
+            
+        } else {
+            
+            self.view?.hideLoader()
+            
+            self.router?.popBack()
+        }
+        
+        
     }
     
-    func measurementStored() {
+    func measurementStoreFailed() {
+        
+        self.view?.hideLoader()
+        
+        print("faild to store")
+    }
+    
+    func profileUpdated() {
         
         self.view?.hideLoader()
         
         self.router?.popBack()
     }
     
-    func measurementFailedToStore() {
+    func profileUpdateFailed() {
         
         self.view?.hideLoader()
         
         print("faild to store")
     }
+    
+    
 }

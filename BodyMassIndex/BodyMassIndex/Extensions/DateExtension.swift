@@ -17,4 +17,9 @@ extension Date
         
         return dateFormatter.string(from: self)
     }
+    
+    func isToday() -> Bool {
+        
+        return self.readableFormat() == Date().readableFormat()
+    }
 }

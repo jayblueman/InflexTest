@@ -14,7 +14,7 @@ protocol ProfileEventHandler {
     
     func didTapOnBackground()
     
-    func viewDidLoad()
+    func viewDidAppear()
     
     func keyboardWillAppearOnScreen()
     

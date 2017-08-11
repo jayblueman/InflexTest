@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeasurementListViewController">
             <connections>
                 <outlet property="emptyScreenPlaceholder" destination="It4-5h-zYl" id="97M-X1-RAj"/>
+                <outlet property="placeHolderTextLabel" destination="t5R-Oi-zeQ" id="lXE-dg-9ra"/>
                 <outlet property="tableView" destination="7G6-6I-Igt" id="6UY-cU-V34"/>
                 <outlet property="view" destination="ygm-Mz-eRR" id="hXv-78-fJv"/>
             </connections>
@@ -24,7 +25,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="It4-5h-zYl">
                     <rect key="frame" x="67" y="169.5" width="240" height="215"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vigyél föl új mérést!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5R-Oi-zeQ">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vigyél föl új mérést!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5R-Oi-zeQ">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="215"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
