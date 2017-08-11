@@ -26,7 +26,7 @@ class ProfileDataInteractor {
     
     private func deleteProfileMeasurements() {
         
-        FirebaseService.deleteProfileMeasurements { (isSuccess) in
+        FirebaseService.deleteProfileMeasurements { [unowned self] (isSuccess: Bool) in
             
             isSuccess ? self.deleteProfileData() : self.presenter?.profileDeleteFailed()
         }
@@ -34,7 +34,7 @@ class ProfileDataInteractor {
     
     private func deleteProfileData() {
         
-        FirebaseService.deleteProfile { (isSuccess) in
+        FirebaseService.deleteProfile { [unowned self] (isSuccess: Bool) in
             
             isSuccess ? self.presenter?.profileDidDeleted() : self.presenter?.profileDeleteFailed()
         }

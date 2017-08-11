@@ -23,7 +23,7 @@ class AddMeasurementDataInteractor {
     
     func store(measurement: Measurement) {
         
-        FirebaseService.addMeasurement(measurement: measurement) { (isSuccess) in
+        FirebaseService.addMeasurement(measurement: measurement) { [unowned self] (isSuccess: Bool) in
             
             isSuccess ? self.presenter?.measurementStored() : self.presenter?.measurementFailedToStore()
         }

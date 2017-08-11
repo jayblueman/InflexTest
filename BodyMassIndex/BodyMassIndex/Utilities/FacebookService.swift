@@ -24,7 +24,7 @@ class FacebookService: NSObject {
 
     func login(completion: @escaping (Bool)->Void) {
         
-        if let accessToken = AccessToken.current {
+        if AccessToken.current != nil {
             print("we have access token")
             
             completion(true)

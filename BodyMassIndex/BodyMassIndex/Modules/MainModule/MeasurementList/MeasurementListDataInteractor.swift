@@ -50,7 +50,7 @@ class MeasurementListDataInteractor: NSObject
     
     func retrieveMeasurementList() {
         
-        FirebaseService.measurements { (isSuccess, measurements) in
+        FirebaseService.measurements { [unowned self] (isSuccess: Bool, measurements: [Measurement]) in
             
             isSuccess ? self.presenter?.measurementListRetrieved(measurementList: measurements) : self.presenter?.retrieveMeasurementListFailed()
         }

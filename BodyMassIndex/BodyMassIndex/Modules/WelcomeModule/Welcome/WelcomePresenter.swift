@@ -13,26 +13,41 @@ class WelcomePresenter {
     weak var view: WelcomeView?
 
     fileprivate weak var router: WelcomeRouter?
-
+    
+    fileprivate var welcomeDataInteractor = WelcomeDataInteractor()
+    
     init(view: WelcomeView?, router: WelcomeRouter?) {
 
         self.view = view
 
         self.router = router
+        
+        self.welcomeDataInteractor.presenter = self
     }
 }
 
 extension WelcomePresenter: WelcomeEventHandler {
     
     func loginButtonPressed() {
-        //facebook login
         
-        FacebookService().login { (isSuccessful, profile) in
-            
-            if isSuccessful {
-                
-                self.router?.showMainScreen()
-            }
-        }
+        self.welcomeDataInteractor.login()
+    }
+}
+
+extension WelcomePresenter: WelcomeDataInteractorResult {
+    
+    func loginSuccessful() {
+        self.view?.hideLoader()
+        
+        self.router?.showMainScreen()
+    }
+    
+    func loginFailed() {
+        self.view?.hideLoader()
+    }
+    
+    func firebaseLoginStarted() {
+        
+        self.view?.showLoader()
     }
 }

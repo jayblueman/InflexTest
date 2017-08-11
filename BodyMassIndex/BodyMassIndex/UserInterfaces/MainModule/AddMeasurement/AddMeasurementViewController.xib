@@ -40,8 +40,8 @@
                     <date key="date" timeIntervalSinceReferenceDate="523896331.64690799">
                         <!--2017-08-08 14:45:31 +0000-->
                     </date>
-                    <date key="minimumDate" timeIntervalSinceReferenceDate="504961200">
-                        <!--2017-01-01 11:00:00 +0000-->
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="-31582800">
+                        <!--2000-01-01 11:00:00 +0000-->
                     </date>
                     <connections>
                         <action selector="datePickerDidChangeValue:" destination="-1" eventType="valueChanged" id="KRh-Yp-6Zj"/>
