@@ -9,6 +9,9 @@ target 'BodyMassIndex' do
 
     pod 'FacebookCore'
     pod 'FacebookLogin'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 
   target 'BodyMassIndexTests' do
     inherit! :search_paths

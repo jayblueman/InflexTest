@@ -11,5 +11,9 @@ import Foundation
 protocol AddMeasurementView: class {
 
     var eventHandler: AddMeasurementEventHandler? {get set}
+    
+    func enableAddButton()
+    
+    func disableAddButton()
 
 }

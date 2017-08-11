@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileManager {
 
@@ -14,6 +15,15 @@ class ProfileManager {
     
     var profile: Profile?
     
+    fileprivate var user: User? {
+        didSet {
+            guard let user = self.user else {
+                return
+            }
+            
+            self.profile = Profile(name: user.displayName ?? "", isMale: true, birthDate: "", weight: 23, profilePicture: "", height: 2.32)
+        }
+    }
     private init() {
         
     }
@@ -26,5 +36,10 @@ class ProfileManager {
     func loginUser(userProfile: Profile) {
         
         self.profile = userProfile
+    }
+    
+    func loginUser(user: User) {
+        
+        self.user = user
     }
 }

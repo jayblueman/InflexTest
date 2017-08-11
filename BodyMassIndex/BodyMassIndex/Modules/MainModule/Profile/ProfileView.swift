@@ -19,4 +19,8 @@ protocol ProfileView: class {
     func moveContainerDownwards()
     
     func updateContent()
+    
+    func showLogoutConfirmAlert()
+    
+    func showDeleteProfileConfirmAlert()
 }

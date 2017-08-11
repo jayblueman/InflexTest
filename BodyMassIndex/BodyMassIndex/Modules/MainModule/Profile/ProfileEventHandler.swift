@@ -19,4 +19,12 @@ protocol ProfileEventHandler {
     func keyboardWillAppearOnScreen()
     
     func keyboardWillDisappearFromScreen()
+    
+    func logoutButtonPressed()
+    
+    func deleteProfileButtonPressed()
+    
+    func logoutUser()
+    
+    func deleteProfile()
 }

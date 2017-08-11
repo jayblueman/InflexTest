@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FacebookLogin
+import FacebookCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,9 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
+        FirebaseApp.configure()
+                
         FacebookService().application(application: application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return FacebookService().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 }
 

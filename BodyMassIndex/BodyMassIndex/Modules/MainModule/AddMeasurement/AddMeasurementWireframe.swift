@@ -41,4 +41,8 @@ extension AddMeasurementWireframe: Wireframe {
 // MARK: - AddMeasurementRouter protocol methods
 
 extension AddMeasurementWireframe: AddMeasurementRouter {
+    
+    func popBack() {
+        self.view.navigationController?.popViewController(animated: true)
+    }
 }

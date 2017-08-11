@@ -9,4 +9,7 @@
 import Foundation
 
 protocol AddMeasurementRouter: class {
+    
+    func popBack()
+    
 }

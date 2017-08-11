@@ -35,7 +35,6 @@ class MeasurementListWireframe: MainModuleWireframe {
 // MARK: - Public methods
 
     func push(_ wireframe: Wireframe) {
-        
         self.view.navigationController?.pushViewController(wireframe.viewController(), animated: true)
     }
 }

@@ -22,32 +22,19 @@ class FacebookService: NSObject {
         return SDKApplicationDelegate.shared.application(application, open: url, options: [UIApplicationOpenURLOptionsKey.sourceApplication : sourceApplication ?? "", UIApplicationOpenURLOptionsKey.annotation: annotation])
     }
 
-    
-    func login(completion: (Bool, Profile)->Void) {
+    func login(completion: @escaping (Bool, LoginResult)->Void) {
         
-        completion(true, Profile.defaultProfile())
-        
-//        let loginManager = LoginManager()
-//        loginManager.logIn([.publicProfile], viewController: nil) { (loginResult) in
-//            
-//            switch loginResult {
-//            case .failed(let error):
-//                print(error)
-//            case .cancelled:
-//                print("User cancelled login.")
-//            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-//                print("Logged in!")
-//            }
-        
-        
-//        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
-//            switch loginResult {
-//            case .Failed(let error):
-//                print(error)
-//            case .Cancelled:
-//                print("User cancelled login.")
-//            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
-//                print("Logged in!")
-//            }
+        let loginManager = LoginManager()
+        loginManager.logIn([.publicProfile], viewController: nil) { (loginResult) in
+            
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                completion(true, loginResult)
+            }
+        }
     }
 }

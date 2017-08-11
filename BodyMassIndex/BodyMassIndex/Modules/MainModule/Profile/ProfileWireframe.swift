@@ -38,6 +38,7 @@ class ProfileWireframe: MainModuleWireframe {
 extension ProfileWireframe: Wireframe {
 
     func viewController() -> UIViewController {
+        
         return self.view
     }
 }
@@ -45,4 +46,9 @@ extension ProfileWireframe: Wireframe {
 // MARK: - ProfileRouter protocol methods
 
 extension ProfileWireframe: ProfileRouter {
+    
+    func showLoginScreen() {
+        
+        self.mainModule?.showLogin()
+    }
 }

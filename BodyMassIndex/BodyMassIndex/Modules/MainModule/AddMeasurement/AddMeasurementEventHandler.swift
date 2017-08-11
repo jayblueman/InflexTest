@@ -9,4 +9,10 @@
 import Foundation
 
 protocol AddMeasurementEventHandler {
+    
+    func textFieldTextDidChange(text: String)
+    func datePickerDidChange(date: Date)
+    
+    func addButtonPressed()
+    
 }

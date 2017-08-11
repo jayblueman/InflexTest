@@ -28,6 +28,11 @@ class MainModule: Module {
         
         self.tabBarController.viewControllers = [self.measurementListWireframe.viewController(), self.profileWireframe.viewController()]
     }
+    
+    func showLogin() {
+        
+        self.moduleManager.setApp(toState: .welcome)
+    }
 }
 
 extension MainModule: ModuleProtocol {

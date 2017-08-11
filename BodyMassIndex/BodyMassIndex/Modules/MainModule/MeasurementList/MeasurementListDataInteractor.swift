@@ -11,7 +11,7 @@ import Foundation
 struct Measurement {
     
     var date: Date
-    var weight: Double
+    var weight: Double = 0.0
     
     var bmi: Double {
         
@@ -23,6 +23,17 @@ struct Measurement {
     var bmiString: String {
         
         return String(format: "%.2f", self.bmi)
+    }
+    
+    init(dictionary: Dictionary<String, Any>) {
+        
+        let dateString = dictionary["date"] as? String
+        
+        self.date = dateString?.dateFromString() ?? Date()
+        
+        let weightString = dictionary["weight"] as? String ?? "0.0"
+        
+        self.weight = Double(weightString) ?? 0.0
     }
 }
 

@@ -9,4 +9,6 @@
 import Foundation
 
 protocol ProfileRouter: class {
+    
+    func showLoginScreen()
 }

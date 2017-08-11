@@ -21,11 +21,6 @@ class MeasurementListPresenter {
         self.view = view
 
         self.router = router
-        
-        self.measurements.append(Measurement(date: Date(), weight: 116))
-        self.measurements.append(Measurement(date: Date(), weight: 96))
-        self.measurements.append(Measurement(date: Date(), weight: 86))
-        self.measurements.append(Measurement(date: Date(), weight: 46))
     }
 }
 
