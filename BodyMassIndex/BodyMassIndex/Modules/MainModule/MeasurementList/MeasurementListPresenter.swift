@@ -14,6 +14,8 @@ class MeasurementListPresenter {
 
     fileprivate weak var router: MeasurementListRouter?
 
+    fileprivate var measurementListDataInteractor = MeasurementListDataInteractor()
+    
     fileprivate var measurements = Array<Measurement>()
     
     init(view: MeasurementListView?, router: MeasurementListRouter?) {
@@ -21,6 +23,8 @@ class MeasurementListPresenter {
         self.view = view
 
         self.router = router
+        
+        self.measurementListDataInteractor.presenter = self
     }
 }
 
@@ -28,6 +32,9 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
     
     func viewDidAppear() {
         
+        self.view?.showLoader()
+        
+        self.measurementListDataInteractor.retrieveMeasurementList()
     }
     
     func viewWillAppear() {
@@ -61,17 +68,25 @@ extension MeasurementListPresenter: MeasurementListDataInteractorResult {
     
     func retrieveMeasurementListFailed() {
         
+        self.view?.hideLoader()
+        
+        self.view?.showPlaceholder()
     }
     
     func measurementListRetrieved(measurementList: Array<Measurement>) {
         
-        if measurementList.isEmpty {
+        self.view?.hideLoader()
+        
+        self.measurements = measurementList
+        
+        if self.measurements.isEmpty {
             
             self.view?.showPlaceholder()
             
         } else {
             
             self.view?.showList()
+            self.view?.refreshTableView()
             
         }
     }

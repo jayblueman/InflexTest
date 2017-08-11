@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol AddMeasurementView: class {
+protocol AddMeasurementView: CommonView {
 
     var eventHandler: AddMeasurementEventHandler? {get set}
     
     func enableAddButton()
     
     func disableAddButton()
-
 }
+

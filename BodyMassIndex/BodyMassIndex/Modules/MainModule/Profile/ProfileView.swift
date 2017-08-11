@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ProfileView: class {
+protocol ProfileView: CommonView {
 
     var eventHandler: ProfileEventHandler? {get set}
 

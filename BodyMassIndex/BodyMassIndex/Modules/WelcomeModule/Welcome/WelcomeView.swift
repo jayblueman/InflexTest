@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol WelcomeView: class {
+protocol WelcomeView: CommonView {
 
     var eventHandler: WelcomeEventHandler? {get set}
 

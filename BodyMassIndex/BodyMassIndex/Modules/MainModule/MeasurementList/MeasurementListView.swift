@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MeasurementListView: class {
+protocol MeasurementListView: CommonView {
 
     var eventHandler: MeasurementListEventHandler? {get set}
 
