@@ -14,11 +14,22 @@ class ProfilePresenter {
 
     fileprivate weak var router: ProfileRouter?
 
+    fileprivate var profileDataInteractor = ProfileDataInteractor()
+    
     init(view: ProfileView?, router: ProfileRouter?) {
 
         self.view = view
 
         self.router = router
+        
+        self.profileDataInteractor.presenter = self
+    }
+    
+    func logoutUser() {
+        
+        FirebaseService.logout()
+        
+        self.router?.showLoginScreen()
     }
 }
 
@@ -46,5 +57,47 @@ extension ProfilePresenter: ProfileEventHandler {
     func keyboardWillDisappearFromScreen() {
         
         self.view?.moveContainerDownwards()
+    }
+    
+    func logoutButtonPressed() {
+        self.view?.showLogoutConfirmAlert()
+    }
+    
+    func deleteProfileButtonPressed() {
+        
+        self.view?.showDeleteProfileConfirmAlert()
+    }
+    
+    func profileDelete(confirmed: Bool) {
+        
+        if confirmed {
+            
+            self.view?.showLoader()
+            
+            self.profileDataInteractor.deleteProfile()
+        }
+    }
+    
+    func logout(confirmed: Bool) {
+        
+        if confirmed {
+            
+            self.logoutUser()
+        }
+    }
+}
+
+extension ProfilePresenter: ProfileDataInteractorResult {
+    
+    func profileDidDeleted() {
+
+        self.view?.hideLoader()
+        
+        self.logoutUser()
+    }
+    
+    func profileDeleteFailed() {
+        
+        self.view?.hideLoader()
     }
 }

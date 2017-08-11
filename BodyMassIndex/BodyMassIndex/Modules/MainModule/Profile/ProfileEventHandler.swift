@@ -24,7 +24,7 @@ protocol ProfileEventHandler {
     
     func deleteProfileButtonPressed()
     
-    func logoutUser()
+    func profileDelete(confirmed: Bool)
     
-    func deleteProfile()
+    func logout(confirmed: Bool)
 }

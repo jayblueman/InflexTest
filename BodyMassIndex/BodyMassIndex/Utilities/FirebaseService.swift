@@ -43,7 +43,7 @@ class FirebaseService: NSObject {
         }
     }
     
-    static func deleteProfile( completion: @escaping (_ success: Bool) -> Void) {
+    static func deleteProfileMeasurements( completion: @escaping (_ success: Bool) -> Void) {
         
         let ref = Database.database().reference()
 
@@ -53,6 +53,17 @@ class FirebaseService: NSObject {
         
         measurementsNewChild.setValue(nil) { (error, databaseRef) in
             
+            completion(error == nil)
+        }
+    }
+    
+    static func deleteProfile(completion: @escaping (_ success: Bool) -> Void) {
+        
+        let user = Auth.auth().currentUser
+        
+        user?.delete { error in
+            
+            completion(error == nil)
         }
     }
     

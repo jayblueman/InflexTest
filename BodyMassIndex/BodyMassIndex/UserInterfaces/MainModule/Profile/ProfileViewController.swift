@@ -31,6 +31,14 @@ class ProfileViewController: UIViewController {
         self.profileHeightTextField.addTarget(self, action: #selector(textFieldTextDidChange), for: .editingChanged)
     }
     
+    @IBAction func deleteProfileButtonPressed(_ sender: Any) {
+        self.eventHandler?.deleteProfileButtonPressed()
+    }
+    
+    @IBAction func logutButtonPressed(_ sender: Any) {
+        self.eventHandler?.logoutButtonPressed()
+    }
+    
     func didTapOnBackground() {
         
         self.eventHandler?.didTapOnBackground()
@@ -71,7 +79,6 @@ extension ProfileViewController: ProfileView {
             self.topConstraint.constant = -topConstraint
         }
         
-        
         UIView.animate(withDuration: 0.33) {
             
             self.view.layoutIfNeeded()
@@ -86,6 +93,26 @@ extension ProfileViewController: ProfileView {
             
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func showLogoutConfirmAlert() {
+        
+        let alertController = AJAlertView.confirmAlertController(title: "Logout", message: "Biztos kijelentkezel?") { (isConfirmed) in
+            
+            self.eventHandler?.logout(confirmed: isConfirmed)
+        }
+        
+        self.navigationController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showDeleteProfileConfirmAlert() {
+        
+        let alertController = AJAlertView.confirmAlertController(title: "Delete", message: "Biztod törlöd a profilt?") { (isConfirmed) in
+            
+            self.eventHandler?.profileDelete(confirmed: isConfirmed)
+        }
+        
+        self.navigationController?.present(alertController, animated: true, completion: nil)
     }
 }
 
