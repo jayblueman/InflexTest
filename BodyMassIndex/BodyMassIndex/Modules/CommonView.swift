@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+protocol CommonView: class {
+    
+    func showLoader()
+    
+    func hideLoader()
+}
