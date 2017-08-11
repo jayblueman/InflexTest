@@ -22,7 +22,14 @@ class FacebookService: NSObject {
         return SDKApplicationDelegate.shared.application(application, open: url, options: [UIApplicationOpenURLOptionsKey.sourceApplication : sourceApplication ?? "", UIApplicationOpenURLOptionsKey.annotation: annotation])
     }
 
-    func login(completion: @escaping (Bool, LoginResult)->Void) {
+    func login(completion: @escaping (Bool)->Void) {
+        
+        if let accessToken = AccessToken.current {
+            print("we have access token")
+            
+            completion(true)
+            return
+        }
         
         let loginManager = LoginManager()
         loginManager.logIn([.publicProfile], viewController: nil) { (loginResult) in
@@ -30,11 +37,14 @@ class FacebookService: NSObject {
             switch loginResult {
             case .failed(let error):
                 print(error)
+                completion(false)
             case .cancelled:
                 print("User cancelled login.")
+                completion(false)
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                completion(true, loginResult)
+                completion(true)
             }
         }
+        
     }
 }
