@@ -19,8 +19,6 @@ class WelcomeModule: Module {
     
     func loginSuccessful() {
         
-//        ProfileManager.shared.loginUser(userProfile: Profile(name: "Jay Blueman", isMale: true, birthDate: "1987-10-12", weight: 86, profilePicture: "", height: 1.76))
-        
         self.moduleManager.setApp(toState: .main)
     }
 }

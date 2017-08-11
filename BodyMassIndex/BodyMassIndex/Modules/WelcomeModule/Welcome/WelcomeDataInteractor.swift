@@ -16,6 +16,7 @@ protocol WelcomeDataInteractorResult : class{
     
     func firebaseLoginStarted()
     
+    func registrationNeeded()
 }
 
 class WelcomeDataInteractor {
@@ -23,21 +24,43 @@ class WelcomeDataInteractor {
     weak var presenter: WelcomeDataInteractorResult?
     
     func login() {
+        
         FacebookService().login {  [unowned self] (isSuccessful: Bool) in
             
-            if isSuccessful {
-                
-                self.presenter?.firebaseLoginStarted()
-                
-                FirebaseService.signIn(completion: {  [unowned self] (isSuccessful: Bool, userProfile) in
-                    
-                    isSuccessful ? self.presenter?.loginSuccessful() : self.presenter?.loginFailed()
-                })
-                
-            } else {
-                
-               self.presenter?.loginFailed()
+            if !isSuccessful {
+                self.presenter?.loginFailed()
+                return
             }
+            
+            self.presenter?.firebaseLoginStarted()
+            
+            FirebaseService.signIn(completion: {  [unowned self] (isSuccessful: Bool, userProfile) in
+                
+                if !isSuccessful {
+                    self.presenter?.loginFailed()
+                    return
+                }
+                
+                ProfileManager.shared.loginUser(user: userProfile)
+                
+                FirebaseService.retrieveProfile(completion: {  [unowned self](isSuccess, retrievedProfile) in
+                    
+                    if !isSuccessful {
+                        self.presenter?.loginFailed()
+                        return
+                    }
+                    
+                    if let profile = retrievedProfile {
+                        
+                        ProfileManager.shared.loginUser(userProfile: profile)
+                        
+                        self.presenter?.loginSuccessful()
+                        return
+                    }
+                    
+                    self.presenter?.registrationNeeded()
+                })
+            })
         }
     }
 }

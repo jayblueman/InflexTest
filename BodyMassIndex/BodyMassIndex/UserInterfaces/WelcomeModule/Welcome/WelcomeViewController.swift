@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func loginButtonPressed(_ sender: Any) {
         
         self.eventHandler?.loginButtonPressed()

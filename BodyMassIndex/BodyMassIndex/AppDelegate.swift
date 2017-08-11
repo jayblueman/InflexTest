@@ -31,9 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.moduleManager = ModuleManager(startState: .welcome, delegate: self)
         
-        let rootNavigationController = UINavigationController(rootViewController: self.rootViewController)
-        rootNavigationController.isNavigationBarHidden  = true
-        self.window?.rootViewController = rootNavigationController
+        self.window?.rootViewController = self.rootViewController
         
         self.window?.makeKeyAndVisible()
         
@@ -54,9 +52,6 @@ extension AppDelegate : ModuleManagerDelegate
 {
     func moduleDidChange(currentModule: ModuleProtocol, animated: Bool)
     {
-        if let navigationController = self.window?.rootViewController as? UINavigationController {
-            
-            navigationController.setViewControllers([self.rootViewController], animated: true)
-        }
+        self.window?.rootViewController = self.rootViewController
     }
 }

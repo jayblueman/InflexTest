@@ -50,4 +50,11 @@ extension WelcomePresenter: WelcomeDataInteractorResult {
         
         self.view?.showLoader()
     }
+    
+    func registrationNeeded() {
+        
+        self.view?.hideLoader()
+        
+        self.router?.showRegistrationScreen()
+    }
 }

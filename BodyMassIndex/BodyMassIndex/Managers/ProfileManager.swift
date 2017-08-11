@@ -21,7 +21,7 @@ class ProfileManager {
                 return
             }
             
-            self.profile = Profile(name: user.displayName ?? "", isMale: true, birthDate: "", weight: 23, profilePicture: "", height: 2.32)
+            self.profile = Profile(name: user.displayName ?? "", isMale: true, birthDate: "", weight: 0, profilePicture: "", height: 0.00)
         }
     }
     private init() {

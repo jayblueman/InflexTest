@@ -13,6 +13,10 @@ protocol ProfileDataInteractorResult : class {
     func profileDidDeleted()
     
     func profileDeleteFailed()
+    
+    func profileDidUpdate()
+    
+    func profileUpdateFailed()
 }
 
 class ProfileDataInteractor {
@@ -22,6 +26,14 @@ class ProfileDataInteractor {
     func deleteProfile() {
         
         self.deleteProfileMeasurements()
+    }
+    
+    func updateProfile() {
+        
+        FirebaseService.updateProfileData { (isSuccess: Bool) in
+            
+            isSuccess ? self.presenter?.profileDidUpdate() : self.presenter?.profileUpdateFailed()
+        }
     }
     
     private func deleteProfileMeasurements() {

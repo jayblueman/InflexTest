@@ -23,4 +23,8 @@ protocol ProfileView: CommonView {
     func showLogoutConfirmAlert()
     
     func showDeleteProfileConfirmAlert()
+    
+    func enableSaveButton()
+    
+    func disableSaveButton()
 }

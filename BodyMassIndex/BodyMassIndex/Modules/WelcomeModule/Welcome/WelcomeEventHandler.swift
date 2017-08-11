@@ -11,5 +11,4 @@ import Foundation
 protocol WelcomeEventHandler {
     
     func loginButtonPressed()
-    
 }

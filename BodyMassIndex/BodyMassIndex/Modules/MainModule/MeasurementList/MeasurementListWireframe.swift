@@ -54,8 +54,6 @@ extension MeasurementListWireframe: MeasurementListRouter {
     
     func showAddMeasurement() {
         
-        self.addMeasurementWireframe = nil
-        
         guard let mainModule = self.mainModule else {
             return
         }

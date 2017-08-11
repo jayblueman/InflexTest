@@ -14,6 +14,10 @@ class WelcomeWireframe: WelcomeModuleWireframe {
     fileprivate var presenter: WelcomePresenter?
 
     fileprivate var view = WelcomeViewController()
+    
+    fileprivate var registrationWireframe: RegistrationWireframe?
+    
+    fileprivate var navigationController: UINavigationController!
 
     override init(welcomeModule: WelcomeModule) {
         super.init(welcomeModule: welcomeModule)
@@ -21,6 +25,9 @@ class WelcomeWireframe: WelcomeModuleWireframe {
         self.presenter = WelcomePresenter(view: self.view, router: self)
 
         self.view.eventHandler = self.presenter
+        
+        self.navigationController = UINavigationController(rootViewController: self.view)
+        self.navigationController.navigationBar.isTranslucent = false
     }
 
 // MARK: - Public methods
@@ -35,7 +42,7 @@ class WelcomeWireframe: WelcomeModuleWireframe {
 extension WelcomeWireframe: Wireframe {
 
     func viewController() -> UIViewController {
-        return self.view
+        return self.navigationController
     }
 }
 
@@ -46,5 +53,20 @@ extension WelcomeWireframe: WelcomeRouter {
     func showMainScreen() {
         
         self.welcomeModule?.loginSuccessful()
+    }
+    
+    func showRegistrationScreen() {
+        
+        guard let welcomeModule = self.welcomeModule else {
+            return
+        }
+        
+        self.registrationWireframe = RegistrationWireframe(welcomeModule: welcomeModule)
+        
+        guard let registrationWireframe = self.registrationWireframe else {
+            return
+        }
+        
+        self.push(registrationWireframe)
     }
 }

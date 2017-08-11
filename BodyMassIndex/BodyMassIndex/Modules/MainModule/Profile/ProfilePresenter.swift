@@ -38,6 +38,8 @@ extension ProfilePresenter: ProfileEventHandler {
     func textFieldTextDidChange(textFieldText: String) {
         
         ProfileManager.shared.profile?.height = (Double(textFieldText) ?? 0.0) / 100.0
+        
+        self.view?.enableSaveButton()
     }
     
     func didTapOnBackground() {
@@ -46,6 +48,7 @@ extension ProfilePresenter: ProfileEventHandler {
     }
     
     func viewDidLoad() {
+        
         self.view?.updateContent()
     }
     
@@ -57,6 +60,13 @@ extension ProfilePresenter: ProfileEventHandler {
     func keyboardWillDisappearFromScreen() {
         
         self.view?.moveContainerDownwards()
+    }
+    
+    func saveProfileButtonPressed() {
+        
+        self.view?.showLoader()
+        
+        self.profileDataInteractor.updateProfile()
     }
     
     func logoutButtonPressed() {
@@ -97,6 +107,18 @@ extension ProfilePresenter: ProfileDataInteractorResult {
     }
     
     func profileDeleteFailed() {
+        
+        self.view?.hideLoader()
+    }
+    
+    func profileDidUpdate() {
+        
+        self.view?.hideLoader()
+        
+        self.view?.disableSaveButton()
+    }
+    
+    func profileUpdateFailed() {
         
         self.view?.hideLoader()
     }

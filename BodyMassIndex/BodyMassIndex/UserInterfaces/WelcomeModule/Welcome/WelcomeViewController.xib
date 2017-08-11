@@ -29,12 +29,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyv-EJ-ZVF">
-                    <rect key="frame" x="94" y="565" width="187" height="30"/>
+                    <rect key="frame" x="140" y="368.5" width="95" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="DqJ-5M-GyY"/>
-                        <constraint firstAttribute="width" constant="187" id="oIs-gd-fff"/>
+                        <constraint firstAttribute="height" constant="30" id="BXf-be-tmm"/>
+                        <constraint firstAttribute="width" constant="95" id="bXd-lw-6DL"/>
                     </constraints>
-                    <state key="normal" title="Login with facebook"/>
+                    <state key="normal" title="Bejelentkezés"/>
                     <connections>
                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="N3B-D8-lUh"/>
                     </connections>
@@ -42,11 +42,11 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Uyv-EJ-ZVF" secondAttribute="bottom" constant="72" id="4jP-QW-6yn"/>
+                <constraint firstItem="Uyv-EJ-ZVF" firstAttribute="centerY" secondItem="un8-6W-23G" secondAttribute="centerY" constant="50" id="1GO-jz-nAa"/>
                 <constraint firstItem="CrW-xO-qnb" firstAttribute="top" secondItem="un8-6W-23G" secondAttribute="top" constant="20" id="Hfd-jf-4FV"/>
                 <constraint firstItem="CrW-xO-qnb" firstAttribute="leading" secondItem="un8-6W-23G" secondAttribute="leading" constant="16" id="MVg-6d-hMR"/>
                 <constraint firstAttribute="trailing" secondItem="CrW-xO-qnb" secondAttribute="trailing" constant="16" id="SfS-Ae-5ky"/>
-                <constraint firstItem="Uyv-EJ-ZVF" firstAttribute="centerX" secondItem="un8-6W-23G" secondAttribute="centerX" id="Tvg-gu-qAj"/>
+                <constraint firstItem="Uyv-EJ-ZVF" firstAttribute="centerX" secondItem="un8-6W-23G" secondAttribute="centerX" id="nom-mM-E37"/>
             </constraints>
             <point key="canvasLocation" x="7.5" y="-135.5"/>
         </view>

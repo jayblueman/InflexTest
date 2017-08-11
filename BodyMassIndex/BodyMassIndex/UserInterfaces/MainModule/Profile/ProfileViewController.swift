@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     var eventHandler: ProfileEventHandler?
     
     override func viewDidLoad() {
@@ -29,6 +31,10 @@ class ProfileViewController: UIViewController {
         self.eventHandler?.viewDidLoad()
         
         self.profileHeightTextField.addTarget(self, action: #selector(textFieldTextDidChange), for: .editingChanged)
+    }
+    
+    @IBAction func saveProfileButtonPressed(_ sender: Any) {
+        self.eventHandler?.saveProfileButtonPressed()
     }
     
     @IBAction func deleteProfileButtonPressed(_ sender: Any) {
@@ -102,7 +108,7 @@ extension ProfileViewController: ProfileView {
             self.eventHandler?.logout(confirmed: isConfirmed)
         }
         
-        self.navigationController?.present(alertController, animated: true, completion: nil)
+        self.tabBarController?.present(alertController, animated: true, completion: nil)
     }
     
     func showDeleteProfileConfirmAlert() {
@@ -112,7 +118,17 @@ extension ProfileViewController: ProfileView {
             self.eventHandler?.profileDelete(confirmed: isConfirmed)
         }
         
-        self.navigationController?.present(alertController, animated: true, completion: nil)
+        self.tabBarController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func enableSaveButton() {
+        
+        self.saveButton.isEnabled = true
+    }
+    
+    func disableSaveButton() {
+        
+        self.saveButton.isEnabled = false
     }
 }
 

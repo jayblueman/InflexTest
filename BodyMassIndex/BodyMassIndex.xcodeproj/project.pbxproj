@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		630CBE4BF5D5ABC751788890 /* Pods_BodyMassIndexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7DD510385034329AEDECAE2 /* Pods_BodyMassIndexTests.framework */; };
 		A2A84C3CE9B795180D821827 /* Pods_BodyMassIndex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08D98FE08BC4B3900765AF1E /* Pods_BodyMassIndex.framework */; };
+		B12E0E2B1F3DE2F60075A26C /* RegistrationEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E261F3DE2F60075A26C /* RegistrationEventHandler.swift */; };
+		B12E0E2C1F3DE2F60075A26C /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E271F3DE2F60075A26C /* RegistrationPresenter.swift */; };
+		B12E0E2D1F3DE2F60075A26C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E281F3DE2F60075A26C /* RegistrationRouter.swift */; };
+		B12E0E2E1F3DE2F60075A26C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E291F3DE2F60075A26C /* RegistrationView.swift */; };
+		B12E0E2F1F3DE2F60075A26C /* RegistrationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E2A1F3DE2F60075A26C /* RegistrationWireframe.swift */; };
+		B12E0E331F3DE3250075A26C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E311F3DE3250075A26C /* RegistrationViewController.swift */; };
+		B12E0E341F3DE3250075A26C /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12E0E321F3DE3250075A26C /* RegistrationViewController.xib */; };
+		B12E0E361F3DEA720075A26C /* RegistrationDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E351F3DEA720075A26C /* RegistrationDataInteractor.swift */; };
 		B14AD05F1F39A58B00C2C280 /* MeasurementListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD05A1F39A58B00C2C280 /* MeasurementListEventHandler.swift */; };
 		B14AD0601F39A58B00C2C280 /* MeasurementListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD05B1F39A58B00C2C280 /* MeasurementListPresenter.swift */; };
 		B14AD0611F39A58B00C2C280 /* MeasurementListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD05C1F39A58B00C2C280 /* MeasurementListRouter.swift */; };
@@ -82,6 +90,14 @@
 /* Begin PBXFileReference section */
 		08D98FE08BC4B3900765AF1E /* Pods_BodyMassIndex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyMassIndex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8947ADA2D77C5E58701805 /* Pods-BodyMassIndexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyMassIndexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyMassIndexTests/Pods-BodyMassIndexTests.release.xcconfig"; sourceTree = "<group>"; };
+		B12E0E261F3DE2F60075A26C /* RegistrationEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEventHandler.swift; sourceTree = "<group>"; };
+		B12E0E271F3DE2F60075A26C /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		B12E0E281F3DE2F60075A26C /* RegistrationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		B12E0E291F3DE2F60075A26C /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		B12E0E2A1F3DE2F60075A26C /* RegistrationWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationWireframe.swift; sourceTree = "<group>"; };
+		B12E0E311F3DE3250075A26C /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		B12E0E321F3DE3250075A26C /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		B12E0E351F3DEA720075A26C /* RegistrationDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataInteractor.swift; sourceTree = "<group>"; };
 		B14AD05A1F39A58B00C2C280 /* MeasurementListEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListEventHandler.swift; sourceTree = "<group>"; };
 		B14AD05B1F39A58B00C2C280 /* MeasurementListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListPresenter.swift; sourceTree = "<group>"; };
 		B14AD05C1F39A58B00C2C280 /* MeasurementListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListRouter.swift; sourceTree = "<group>"; };
@@ -180,6 +196,28 @@
 				0B8947ADA2D77C5E58701805 /* Pods-BodyMassIndexTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B12E0E251F3DE2F60075A26C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				B12E0E261F3DE2F60075A26C /* RegistrationEventHandler.swift */,
+				B12E0E271F3DE2F60075A26C /* RegistrationPresenter.swift */,
+				B12E0E281F3DE2F60075A26C /* RegistrationRouter.swift */,
+				B12E0E291F3DE2F60075A26C /* RegistrationView.swift */,
+				B12E0E2A1F3DE2F60075A26C /* RegistrationWireframe.swift */,
+				B12E0E351F3DEA720075A26C /* RegistrationDataInteractor.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		B12E0E301F3DE3250075A26C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				B12E0E311F3DE3250075A26C /* RegistrationViewController.swift */,
+				B12E0E321F3DE3250075A26C /* RegistrationViewController.xib */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		B14AD0581F39A58B00C2C280 /* MainModule */ = {
@@ -364,6 +402,7 @@
 			children = (
 				B1A677551F386B7C00B4B3ED /* WelcomeModule.swift */,
 				B1A677541F386B7C00B4B3ED /* WelcomeModuleWireframe.swift */,
+				B12E0E251F3DE2F60075A26C /* Registration */,
 				B1A677561F386B7C00B4B3ED /* Welcome */,
 			);
 			path = WelcomeModule;
@@ -394,6 +433,7 @@
 		B1A6775D1F386B7C00B4B3ED /* WelcomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				B12E0E301F3DE3250075A26C /* Registration */,
 				B1A6775E1F386B7C00B4B3ED /* Welcome */,
 			);
 			path = WelcomeModule;
@@ -533,6 +573,7 @@
 				B1D76FF21F3DB7FD00698299 /* LoadingIndicatorView.xib in Resources */,
 				B1A677381F38698300B4B3ED /* LaunchScreen.storyboard in Resources */,
 				B14AD0691F39A59700C2C280 /* MeasurementListViewController.xib in Resources */,
+				B12E0E341F3DE3250075A26C /* RegistrationViewController.xib in Resources */,
 				B1A677731F386B7D00B4B3ED /* WelcomeViewController.xib in Resources */,
 				B14AD09B1F39FCF400C2C280 /* AddMeasurementViewController.xib in Resources */,
 				B14AD07D1F39AC9C00C2C280 /* ProfileViewController.xib in Resources */,
@@ -649,6 +690,8 @@
 			files = (
 				B1D76FF41F3DB81900698299 /* LoadingIndicator.swift in Sources */,
 				B14AD0761F39AC8B00C2C280 /* ProfileRouter.swift in Sources */,
+				B12E0E2D1F3DE2F60075A26C /* RegistrationRouter.swift in Sources */,
+				B12E0E2E1F3DE2F60075A26C /* RegistrationView.swift in Sources */,
 				B14AD0861F39BC1600C2C280 /* DateExtension.swift in Sources */,
 				B14AD07F1F39B47000C2C280 /* MeasurementListDataInteractor.swift in Sources */,
 				B1A6776D1F386B7D00B4B3ED /* WelcomeEventHandler.swift in Sources */,
@@ -657,6 +700,7 @@
 				B1A6776E1F386B7D00B4B3ED /* WelcomePresenter.swift in Sources */,
 				B14AD09F1F3A1EAF00C2C280 /* FirebaseService.swift in Sources */,
 				B1A6776F1F386B7D00B4B3ED /* WelcomeRouter.swift in Sources */,
+				B12E0E331F3DE3250075A26C /* RegistrationViewController.swift in Sources */,
 				B14AD0931F39FCE300C2C280 /* AddMeasurementPresenter.swift in Sources */,
 				B1D76FF61F3DBC5900698299 /* CommonView.swift in Sources */,
 				B1A677681F386B7C00B4B3ED /* ModuleManager.swift in Sources */,
@@ -665,9 +709,11 @@
 				B1D76FE71F3DAFD100698299 /* ProfileDataInteractor.swift in Sources */,
 				B1A6776B1F386B7D00B4B3ED /* WelcomeModuleWireframe.swift in Sources */,
 				B14AD0771F39AC8B00C2C280 /* ProfileView.swift in Sources */,
+				B12E0E361F3DEA720075A26C /* RegistrationDataInteractor.swift in Sources */,
 				B1A677721F386B7D00B4B3ED /* WelcomeViewController.swift in Sources */,
 				B1A677701F386B7D00B4B3ED /* WelcomeView.swift in Sources */,
 				B14AD0601F39A58B00C2C280 /* MeasurementListPresenter.swift in Sources */,
+				B12E0E2C1F3DE2F60075A26C /* RegistrationPresenter.swift in Sources */,
 				B14C5DD41F3AFDA600115E92 /* AJAlertView.swift in Sources */,
 				B1D76FE91F3DB51D00698299 /* UIViewControllerExtension.swift in Sources */,
 				B14AD0951F39FCE300C2C280 /* AddMeasurementView.swift in Sources */,
@@ -683,9 +729,11 @@
 				B14AD0741F39AC8B00C2C280 /* ProfileEventHandler.swift in Sources */,
 				B14AD06D1F39A5FD00C2C280 /* MainModuleWireframe.swift in Sources */,
 				B1A6776C1F386B7D00B4B3ED /* WelcomeModule.swift in Sources */,
+				B12E0E2F1F3DE2F60075A26C /* RegistrationWireframe.swift in Sources */,
 				B1A6776A1F386B7D00B4B3ED /* Wireframe.swift in Sources */,
 				B14AD08B1F39F8CE00C2C280 /* ProfileManager.swift in Sources */,
 				B1A677711F386B7D00B4B3ED /* WelcomeWireframe.swift in Sources */,
+				B12E0E2B1F3DE2F60075A26C /* RegistrationEventHandler.swift in Sources */,
 				B1D76FF81F3DC82C00698299 /* WelcomeDataInteractor.swift in Sources */,
 				B14AD06C1F39A5FD00C2C280 /* MainModule.swift in Sources */,
 				B14AD0921F39FCE300C2C280 /* AddMeasurementEventHandler.swift in Sources */,
