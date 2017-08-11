@@ -58,6 +58,13 @@
 		B1A677721F386B7D00B4B3ED /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A6775F1F386B7C00B4B3ED /* WelcomeViewController.swift */; };
 		B1A677731F386B7D00B4B3ED /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A677601F386B7C00B4B3ED /* WelcomeViewController.xib */; };
 		B1A677841F38A1BF00B4B3ED /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A677831F38A1BF00B4B3ED /* FacebookService.swift */; };
+		B1D76FE51F3DABE300698299 /* AddMeasurementDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FE41F3DABE300698299 /* AddMeasurementDataInteractor.swift */; };
+		B1D76FE71F3DAFD100698299 /* ProfileDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FE61F3DAFD100698299 /* ProfileDataInteractor.swift */; };
+		B1D76FE91F3DB51D00698299 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FE81F3DB51D00698299 /* UIViewControllerExtension.swift */; };
+		B1D76FF01F3DB7EB00698299 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FEF1F3DB7EB00698299 /* LoadingIndicatorView.swift */; };
+		B1D76FF21F3DB7FD00698299 /* LoadingIndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D76FF11F3DB7FD00698299 /* LoadingIndicatorView.xib */; };
+		B1D76FF41F3DB81900698299 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FF31F3DB81900698299 /* LoadingIndicator.swift */; };
+		B1D76FF61F3DBC5900698299 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D76FF51F3DBC5900698299 /* CommonView.swift */; };
 		B1DAE22D1F3CB391002043F3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAE22C1F3CB391002043F3 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +135,13 @@
 		B1A6775F1F386B7C00B4B3ED /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B1A677601F386B7C00B4B3ED /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		B1A677831F38A1BF00B4B3ED /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		B1D76FE41F3DABE300698299 /* AddMeasurementDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMeasurementDataInteractor.swift; sourceTree = "<group>"; };
+		B1D76FE61F3DAFD100698299 /* ProfileDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataInteractor.swift; sourceTree = "<group>"; };
+		B1D76FE81F3DB51D00698299 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		B1D76FEF1F3DB7EB00698299 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		B1D76FF11F3DB7FD00698299 /* LoadingIndicatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingIndicatorView.xib; sourceTree = "<group>"; };
+		B1D76FF31F3DB81900698299 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		B1D76FF51F3DBC5900698299 /* CommonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
 		B1DAE22C1F3CB391002043F3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C71A015AF582682AF96E4273 /* Pods-BodyMassIndexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyMassIndexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyMassIndexTests/Pods-BodyMassIndexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E26BCD2E49E653FB11F79039 /* Pods-BodyMassIndex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyMassIndex.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyMassIndex/Pods-BodyMassIndex.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +234,7 @@
 				B14AD0711F39AC8B00C2C280 /* ProfileRouter.swift */,
 				B14AD0721F39AC8B00C2C280 /* ProfileView.swift */,
 				B14AD0731F39AC8B00C2C280 /* ProfileWireframe.swift */,
+				B1D76FE61F3DAFD100698299 /* ProfileDataInteractor.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -238,6 +253,7 @@
 			children = (
 				B14AD0851F39BC1600C2C280 /* DateExtension.swift */,
 				B1DAE22C1F3CB391002043F3 /* StringExtension.swift */,
+				B1D76FE81F3DB51D00698299 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +266,7 @@
 				B14AD08F1F39FCE300C2C280 /* AddMeasurementRouter.swift */,
 				B14AD0901F39FCE300C2C280 /* AddMeasurementView.swift */,
 				B14AD0911F39FCE300C2C280 /* AddMeasurementWireframe.swift */,
+				B1D76FE41F3DABE300698299 /* AddMeasurementDataInteractor.swift */,
 			);
 			path = AddMeasurement;
 			sourceTree = "<group>";
@@ -333,6 +350,7 @@
 			children = (
 				B1A677511F386B7C00B4B3ED /* Module.swift */,
 				B1A677521F386B7C00B4B3ED /* Wireframe.swift */,
+				B1D76FF51F3DBC5900698299 /* CommonView.swift */,
 				B14AD0581F39A58B00C2C280 /* MainModule */,
 				B1A677531F386B7C00B4B3ED /* WelcomeModule */,
 			);
@@ -390,11 +408,22 @@
 		B1A677611F386B7C00B4B3ED /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B1D76FEE1F3DB7D900698299 /* LoadingIndicator */,
 				B1A677831F38A1BF00B4B3ED /* FacebookService.swift */,
 				B14AD09E1F3A1EAF00C2C280 /* FirebaseService.swift */,
 				B14C5DD31F3AFDA600115E92 /* AJAlertView.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B1D76FEE1F3DB7D900698299 /* LoadingIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				B1D76FF31F3DB81900698299 /* LoadingIndicator.swift */,
+				B1D76FEF1F3DB7EB00698299 /* LoadingIndicatorView.swift */,
+				B1D76FF11F3DB7FD00698299 /* LoadingIndicatorView.xib */,
+			);
+			path = LoadingIndicator;
 			sourceTree = "<group>";
 		};
 		F2DBED5428CE8F66428029B2 /* Frameworks */ = {
@@ -498,6 +527,7 @@
 			files = (
 				B14AD0831F39B64200C2C280 /* MeasurementListCellTableViewCell.xib in Resources */,
 				B14AD09D1F3A146400C2C280 /* GoogleService-Info.plist in Resources */,
+				B1D76FF21F3DB7FD00698299 /* LoadingIndicatorView.xib in Resources */,
 				B1A677381F38698300B4B3ED /* LaunchScreen.storyboard in Resources */,
 				B14AD0691F39A59700C2C280 /* MeasurementListViewController.xib in Resources */,
 				B1A677731F386B7D00B4B3ED /* WelcomeViewController.xib in Resources */,
@@ -614,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D76FF41F3DB81900698299 /* LoadingIndicator.swift in Sources */,
 				B14AD0761F39AC8B00C2C280 /* ProfileRouter.swift in Sources */,
 				B14AD0861F39BC1600C2C280 /* DateExtension.swift in Sources */,
 				B14AD07F1F39B47000C2C280 /* MeasurementListDataInteractor.swift in Sources */,
@@ -624,21 +655,25 @@
 				B14AD09F1F3A1EAF00C2C280 /* FirebaseService.swift in Sources */,
 				B1A6776F1F386B7D00B4B3ED /* WelcomeRouter.swift in Sources */,
 				B14AD0931F39FCE300C2C280 /* AddMeasurementPresenter.swift in Sources */,
+				B1D76FF61F3DBC5900698299 /* CommonView.swift in Sources */,
 				B1A677681F386B7C00B4B3ED /* ModuleManager.swift in Sources */,
 				B14AD07C1F39AC9C00C2C280 /* ProfileViewController.swift in Sources */,
 				B14AD0891F39D0B800C2C280 /* Profile.swift in Sources */,
+				B1D76FE71F3DAFD100698299 /* ProfileDataInteractor.swift in Sources */,
 				B1A6776B1F386B7D00B4B3ED /* WelcomeModuleWireframe.swift in Sources */,
 				B14AD0771F39AC8B00C2C280 /* ProfileView.swift in Sources */,
 				B1A677721F386B7D00B4B3ED /* WelcomeViewController.swift in Sources */,
 				B1A677701F386B7D00B4B3ED /* WelcomeView.swift in Sources */,
 				B14AD0601F39A58B00C2C280 /* MeasurementListPresenter.swift in Sources */,
 				B14C5DD41F3AFDA600115E92 /* AJAlertView.swift in Sources */,
+				B1D76FE91F3DB51D00698299 /* UIViewControllerExtension.swift in Sources */,
 				B14AD0951F39FCE300C2C280 /* AddMeasurementView.swift in Sources */,
 				B1A677691F386B7C00B4B3ED /* Module.swift in Sources */,
 				B14AD0781F39AC8B00C2C280 /* ProfileWireframe.swift in Sources */,
 				B14AD0681F39A59700C2C280 /* MeasurementListViewController.swift in Sources */,
 				B14AD0621F39A58B00C2C280 /* MeasurementListView.swift in Sources */,
 				B14AD0611F39A58B00C2C280 /* MeasurementListRouter.swift in Sources */,
+				B1D76FF01F3DB7EB00698299 /* LoadingIndicatorView.swift in Sources */,
 				B14AD05F1F39A58B00C2C280 /* MeasurementListEventHandler.swift in Sources */,
 				B1A6772E1F38698300B4B3ED /* AppDelegate.swift in Sources */,
 				B14AD0631F39A58B00C2C280 /* MeasurementListWireframe.swift in Sources */,
@@ -653,6 +688,7 @@
 				B14AD0821F39B64200C2C280 /* MeasurementListCellTableViewCell.swift in Sources */,
 				B1DAE22D1F3CB391002043F3 /* StringExtension.swift in Sources */,
 				B14AD09A1F39FCF400C2C280 /* AddMeasurementViewController.swift in Sources */,
+				B1D76FE51F3DABE300698299 /* AddMeasurementDataInteractor.swift in Sources */,
 				B14AD0961F39FCE300C2C280 /* AddMeasurementWireframe.swift in Sources */,
 				B1A677841F38A1BF00B4B3ED /* FacebookService.swift in Sources */,
 			);
