@@ -10,6 +10,7 @@ import Foundation
 
 struct Measurement {
     
+    var identifier: String
     var date: Date
     var weight: Double = 0.0
     
@@ -29,6 +30,7 @@ struct Measurement {
         
         let dateString = dictionary["date"] as? String
         
+        self.identifier = dictionary["identifier"] as? String ?? "identifier"
         self.date = dateString?.dateFromString() ?? Date()
         
         let weightString = dictionary["weight"] as? String ?? "0.0"
@@ -41,6 +43,9 @@ protocol MeasurementListDataInteractorResult : class
 {
     func retrieveMeasurementListFailed()
     func measurementListRetrieved(measurementList: Array<Measurement>)
+    
+    func measurementDeleteFailed()
+    func measurementDeleted()
 }
 
 class MeasurementListDataInteractor: NSObject
@@ -55,5 +60,12 @@ class MeasurementListDataInteractor: NSObject
             isSuccess ? self.presenter?.measurementListRetrieved(measurementList: measurements) : self.presenter?.retrieveMeasurementListFailed()
         }
         
+    }
+    
+    func delete(measurement: Measurement) {
+        
+        FirebaseService.delete(measurement: measurement) { (isSuccess: Bool) in
+            isSuccess ? self.presenter?.measurementDeleted() : self.presenter?.measurementDeleteFailed()
+        }
     }
 }

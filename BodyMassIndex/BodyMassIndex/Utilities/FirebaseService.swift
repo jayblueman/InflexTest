@@ -75,7 +75,7 @@ class FirebaseService: NSObject {
         
         let measurementsNewChild = ref.child("users").child("\(userID)").child("measurements").childByAutoId()
         
-        let measurement = ["userID": userID, "date": measurement.date.readableFormat(), "weight": "\(measurement.weight)"] as [String : Any]
+        let measurement = ["userID": userID, "date": measurement.date.readableFormat(), "weight": "\(measurement.weight)", "identifier" : measurementsNewChild.key] as [String : Any]
         measurementsNewChild.updateChildValues(measurement) { (error, databaseRef) in
             
             completion(error == nil)
@@ -108,6 +108,20 @@ class FirebaseService: NSObject {
         }) { (error) in
             
             completion(false, [])
+        }
+    }
+    
+    static func delete(measurement: Measurement, completion: @escaping (_ isSuccess: Bool) -> Void) {
+        
+        let ref = Database.database().reference()
+        
+        let userID = Auth.auth().currentUser?.uid ?? ""
+        
+        let measurementsNewChild = ref.child("users").child("\(userID)").child("measurements").child(measurement.identifier)
+        
+        measurementsNewChild.setValue(nil) { (error, databaseRef) in
+            
+            completion(error == nil)
         }
     }
 

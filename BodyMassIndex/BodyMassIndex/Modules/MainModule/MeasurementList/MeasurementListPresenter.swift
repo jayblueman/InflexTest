@@ -58,9 +58,8 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
     }
     
     func removeMeasurement(atIndex index: Int) {
-        self.measurements.remove(at: index)
         
-        self.view?.refreshTableView()
+        self.measurementListDataInteractor.delete(measurement: self.measurements[index])
     }
 }
 
@@ -89,5 +88,14 @@ extension MeasurementListPresenter: MeasurementListDataInteractorResult {
             self.view?.refreshTableView()
             
         }
+    }
+    
+    func measurementDeleted() {
+        
+        self.measurementListDataInteractor.retrieveMeasurementList()
+    }
+    
+    func measurementDeleteFailed() {
+        
     }
 }
