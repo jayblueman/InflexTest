@@ -87,7 +87,16 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
     
     func removeMeasurement(atIndex index: Int) {
         
-        self.measurementListDataInteractor.delete(measurement: self.measurements[index])
+        self.view?.showDeleteConfirmAlert(withMeasurement: self.measurements[index])
+    }
+    
+    func delete(confirmed: Bool, measurement: Measurement) {
+        
+        if confirmed {
+            
+            self.measurementListDataInteractor.delete(measurement: measurement)
+            
+        }
     }
 }
 

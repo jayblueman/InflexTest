@@ -100,6 +100,16 @@ extension MeasurementListViewController: MeasurementListView {
     func enableAddButton() {
         self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
+    
+    func showDeleteConfirmAlert(withMeasurement measurement: Measurement) {
+        
+        let alertController = AJAlertView.confirmAlertController(title: "Törlés", message: "Biztos torlöd?") { (isConfirmed) in
+            
+            self.eventHandler?.delete(confirmed: isConfirmed, measurement: measurement)
+        }
+        
+        self.tabBarController?.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension MeasurementListViewController: UITableViewDataSource {

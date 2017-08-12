@@ -23,4 +23,6 @@ protocol MeasurementListEventHandler {
     func refreshButtonPressed()
 
     func removeMeasurement(atIndex index: Int)
+    
+    func delete(confirmed: Bool, measurement: Measurement)
 }

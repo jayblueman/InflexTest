@@ -21,4 +21,6 @@ protocol MeasurementListView: CommonView {
     func enableAddButton()
     
     func disableAddButton()
+    
+    func showDeleteConfirmAlert(withMeasurement measurement: Measurement)
 }
