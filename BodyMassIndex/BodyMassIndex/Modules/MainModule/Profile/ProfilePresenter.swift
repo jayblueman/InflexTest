@@ -7,6 +7,7 @@
 //
 
 import Foundation 
+import UIKit
 
 class ProfilePresenter {
 
@@ -31,6 +32,14 @@ class ProfilePresenter {
         
         self.router?.showLoginScreen()
     }
+    
+    fileprivate func displayProfileImage() {
+        
+        if let profileImage = self.profileDataInteractor.profileImage() {
+            
+            self.view?.display(image: profileImage)
+        }
+    }
 }
 
 extension ProfilePresenter: ProfileEventHandler {
@@ -47,9 +56,24 @@ extension ProfilePresenter: ProfileEventHandler {
         self.view?.hideKeyboard()
     }
     
+    func didTapOnImageView() {
+        
+        self.view?.showCamera()
+    }
+    
     func viewDidAppear() {
         
         self.view?.updateContent()
+        
+        if self.profileDataInteractor.profileImage() == nil {
+            
+            self.view?.showLoader()
+            
+            self.profileDataInteractor.downloadProfilePicture()
+        } else {
+            
+            self.displayProfileImage()
+        }
     }
     
     func keyboardWillAppearOnScreen() {
@@ -95,6 +119,13 @@ extension ProfilePresenter: ProfileEventHandler {
             self.logoutUser()
         }
     }
+    
+    func imagePickerController(didFinishPickingImage image: UIImage) {
+        
+        self.view?.showLoader()
+        
+        self.profileDataInteractor.store(image: image)
+    }
 }
 
 extension ProfilePresenter: ProfileDataInteractorResult {
@@ -119,6 +150,30 @@ extension ProfilePresenter: ProfileDataInteractorResult {
     }
     
     func profileUpdateFailed() {
+        
+        self.view?.hideLoader()
+    }
+    
+    func profileImageDidStored() {
+        
+        self.displayProfileImage()
+        
+        self.view?.hideLoader()
+    }
+    
+    func profileImageStoreFailed() {
+        
+        self.view?.hideLoader()
+    }
+    
+    func profileImageDownloaded() {
+        
+        self.displayProfileImage()
+        
+        self.view?.hideLoader()
+    }
+    
+    func profileImageDownloadFailed() {
         
         self.view?.hideLoader()
     }

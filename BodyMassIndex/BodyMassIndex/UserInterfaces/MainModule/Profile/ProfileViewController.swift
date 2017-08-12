@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileWeightLabel: UILabel!
     @IBOutlet weak var profileHeightTextField: UITextField!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -27,6 +29,10 @@ class ProfileViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnBackground))
         self.view.addGestureRecognizer(tapGesture)
+        
+        let tapGestureOnImageView = UITapGestureRecognizer(target: self, action: #selector(didTapOnImageView))
+        self.profileImageView.addGestureRecognizer(tapGestureOnImageView)
+        self.profileImageView.isUserInteractionEnabled = true
         
         self.profileHeightTextField.addTarget(self, action: #selector(textFieldTextDidChange), for: .editingChanged)
     }
@@ -54,6 +60,11 @@ class ProfileViewController: UIViewController {
         self.eventHandler?.didTapOnBackground()
     }
     
+    func didTapOnImageView() {
+        
+        self.eventHandler?.didTapOnImageView()
+    }
+    
     func textFieldTextDidChange() {
         
         self.eventHandler?.textFieldTextDidChange(textFieldText: self.profileHeightTextField.text ?? "")
@@ -77,7 +88,7 @@ extension ProfileViewController: ProfileView {
     }
     
     func moveContainerUpwards() {
-        
+            
         let optimalViewHeight = self.view.bounds.height - 225
         
         let textFieldY = self.profileHeightTextField.frame.minY
@@ -107,7 +118,7 @@ extension ProfileViewController: ProfileView {
     
     func showLogoutConfirmAlert() {
         
-        let alertController = AJAlertView.confirmAlertController(title: "Logout", message: "Biztos kijelentkezel?") { (isConfirmed) in
+        let alertController = AJAlertView.confirmAlertController(title: "Kijelentkezés", message: "Biztos kijelentkezel?") { (isConfirmed) in
             
             self.eventHandler?.logout(confirmed: isConfirmed)
         }
@@ -117,7 +128,7 @@ extension ProfileViewController: ProfileView {
     
     func showDeleteProfileConfirmAlert() {
         
-        let alertController = AJAlertView.confirmAlertController(title: "Delete", message: "Biztod törlöd a profilt?") { (isConfirmed) in
+        let alertController = AJAlertView.confirmAlertController(title: "Profil törlés", message: "Biztod törlöd a profilt?") { (isConfirmed) in
             
             self.eventHandler?.profileDelete(confirmed: isConfirmed)
         }
@@ -133,6 +144,29 @@ extension ProfileViewController: ProfileView {
     func disableSaveButton() {
         
         self.saveButton.isEnabled = false
+    }
+    
+    func showCamera() {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }else  if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func display(image: UIImage) {
+        
+        self.profileImageView.image = image
     }
 }
 
@@ -150,4 +184,25 @@ extension ProfileViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            self.eventHandler?.imagePickerController(didFinishPickingImage: image)
+        }
+        
+        
+
+        dismiss(animated:true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        dismiss(animated:true, completion: nil)
+    }
 }

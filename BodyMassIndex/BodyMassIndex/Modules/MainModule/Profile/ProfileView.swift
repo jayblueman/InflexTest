@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProfileView: CommonView {
 
@@ -27,4 +28,8 @@ protocol ProfileView: CommonView {
     func enableSaveButton()
     
     func disableSaveButton()
+    
+    func showCamera()
+    
+    func display(image: UIImage)
 }

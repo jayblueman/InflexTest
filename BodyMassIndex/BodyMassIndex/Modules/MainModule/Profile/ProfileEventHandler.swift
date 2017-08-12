@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProfileEventHandler {
     
     func textFieldTextDidChange(textFieldText: String)
     
     func didTapOnBackground()
+    
+    func didTapOnImageView()
     
     func viewDidAppear()
     
@@ -29,4 +32,6 @@ protocol ProfileEventHandler {
     func profileDelete(confirmed: Bool)
     
     func logout(confirmed: Bool)
+    
+    func imagePickerController(didFinishPickingImage image: UIImage)
 }

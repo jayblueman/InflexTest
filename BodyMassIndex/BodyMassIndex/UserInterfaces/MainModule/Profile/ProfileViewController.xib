@@ -16,6 +16,7 @@
                 <outlet property="dateOfBirthLabel" destination="92c-CB-i78" id="WfD-sA-HRL"/>
                 <outlet property="profileGenderLabel" destination="Kcl-XT-ZNL" id="AqD-gH-K6i"/>
                 <outlet property="profileHeightTextField" destination="H8g-2b-OsI" id="FkJ-iM-cbX"/>
+                <outlet property="profileImageView" destination="2pM-mm-gmK" id="Fb5-44-h0z"/>
                 <outlet property="profileNameLabel" destination="nim-68-qPC" id="eXa-Qe-fJm"/>
                 <outlet property="profileWeightLabel" destination="Hqy-M4-nIv" id="cLa-J7-qCq"/>
                 <outlet property="saveButton" destination="MzN-ea-aSa" id="oKw-qf-46e"/>
@@ -31,9 +32,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3Y-Ta-CCP">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="464"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2pM-mm-gmK">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="2pM-mm-gmK">
                             <rect key="frame" x="80" y="76" width="215" height="215"/>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="215" id="1iR-B0-GY1"/>
                                 <constraint firstAttribute="width" constant="215" id="NYc-Kc-fZf"/>
@@ -50,8 +51,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Férfi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcl-XT-ZNL">
-                            <rect key="frame" x="320" y="348" width="35" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcl-XT-ZNL">
+                            <rect key="frame" x="355" y="348" width="0.0" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="IgY-zq-m2g"/>
                             </constraints>
@@ -59,8 +60,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1986 March 12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92c-CB-i78">
-                            <rect key="frame" x="241" y="382" width="113.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92c-CB-i78">
+                            <rect key="frame" x="354.5" y="382" width="0.0" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="62c-nH-dc7"/>
                             </constraints>
@@ -78,8 +79,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kovács Gültem" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nim-68-qPC">
-                            <rect key="frame" x="240" y="314" width="114.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nim-68-qPC">
+                            <rect key="frame" x="354.5" y="314" width="0.0" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Nz9-i8-fGP"/>
                             </constraints>
@@ -97,8 +98,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="106 kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqy-M4-nIv">
-                            <rect key="frame" x="302.5" y="416" width="51.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqy-M4-nIv">
+                            <rect key="frame" x="354" y="416" width="0.0" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="qg4-gd-52i"/>
                             </constraints>
@@ -106,7 +107,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="176" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-2b-OsI">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-2b-OsI">
                             <rect key="frame" x="195" y="450" width="159.5" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -201,4 +202,7 @@
             <point key="canvasLocation" x="179" y="-318"/>
         </view>
     </objects>
+    <resources>
+        <image name="defaultImage" width="344" height="230"/>
+    </resources>
 </document>

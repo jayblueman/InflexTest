@@ -57,5 +57,9 @@
 	</array>
 	<key>FacebookAppID</key>
 	<string>111767669489004</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>PhotoLibrary description</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera description</string>
 </dict>
 </plist>

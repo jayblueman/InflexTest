@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProfileDataInteractorResult : class {
     
@@ -17,6 +18,14 @@ protocol ProfileDataInteractorResult : class {
     func profileDidUpdate()
     
     func profileUpdateFailed()
+    
+    func profileImageDidStored()
+    
+    func profileImageStoreFailed()
+    
+    func profileImageDownloaded()
+    
+    func profileImageDownloadFailed()
 }
 
 class ProfileDataInteractor {
@@ -30,7 +39,7 @@ class ProfileDataInteractor {
     
     func updateProfile() {
         
-        FirebaseService.updateProfileData { (isSuccess: Bool) in
+        FirebaseService.updateProfileData { [unowned self] (isSuccess: Bool) in
             
             isSuccess ? self.presenter?.profileDidUpdate() : self.presenter?.profileUpdateFailed()
         }
@@ -40,7 +49,27 @@ class ProfileDataInteractor {
         
         FirebaseService.deleteProfileMeasurements { [unowned self] (isSuccess: Bool) in
             
-            isSuccess ? self.deleteProfileData() : self.presenter?.profileDeleteFailed()
+            isSuccess ? self.deleteProfileImages() : self.presenter?.profileDeleteFailed()
+        }
+    }
+    
+    private func deleteProfileImages() {
+        if self.profileImage() != nil {
+            
+            FirebaseService.deleteProfileImage { [unowned self] (isSuccess: Bool) in
+                
+                if isSuccess {
+                    
+                    FileManager.deleteFile(filename: "ProfileImage")
+                    self.deleteProfileData()
+                    
+                } else {
+                    self.presenter?.profileDeleteFailed()
+                }
+            }
+        } else {
+            
+            self.deleteProfileData()
         }
     }
     
@@ -50,5 +79,30 @@ class ProfileDataInteractor {
             
             isSuccess ? self.presenter?.profileDidDeleted() : self.presenter?.profileDeleteFailed()
         }
+    }
+    
+    func store(image: UIImage) {
+        
+        FileManager.store(image: image, withFilename: "ProfileImage")
+        
+        FirebaseService.upload(imageName: "ProfileImage") { [unowned self] (isSuccess) in
+            
+            isSuccess ? self.presenter?.profileImageDidStored() : self.presenter?.profileImageStoreFailed()
+        }
+    }
+    
+    func downloadProfilePicture() {
+        
+        FirebaseService.download(imageName: "ProfileImage") { [unowned self] (isSuccess) in
+            
+            isSuccess ? self.presenter?.profileImageDownloaded() : self.presenter?.profileImageDownloadFailed()
+        }
+    }
+    
+    func profileImage() -> UIImage? {
+        
+        let imageURL = FileManager.filepath(forFilename: "ProfileImage")
+        
+        return UIImage(contentsOfFile: imageURL.path)
     }
 }

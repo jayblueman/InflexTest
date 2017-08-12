@@ -96,6 +96,48 @@ class FirebaseService: NSObject {
         }
     }
     
+    static func upload(imageName: String, completion: @escaping (_ success: Bool) -> Void) {
+        
+        let filePath = FileManager.filepath(forFilename: imageName)
+        
+        let storage = Storage.storage()
+        
+        let storageRef = storage.reference()
+        
+        let ref = Database.database().reference()
+        
+        let userID = Auth.auth().currentUser?.uid ?? ""
+        
+        let imageRef = storageRef.child("images/user-\(userID)/\(imageName).png")
+        
+        let uploadTask = imageRef.putFile(from: filePath, metadata: nil) { metadata, error in
+            
+            completion(error == nil)
+        }
+        
+    }
+    
+    static func download(imageName: String, completion: @escaping (_ success: Bool) -> Void) {
+        
+        let filePath = FileManager.filepath(forFilename: imageName)
+        
+        let storage = Storage.storage()
+        
+        let storageRef = storage.reference()
+        
+        let ref = Database.database().reference()
+        
+        let userID = Auth.auth().currentUser?.uid ?? ""
+        
+        let imageRef = storageRef.child("images/user-\(userID)/\(imageName).png")
+        
+        // Download to the local filesystem
+        let downloadTask = imageRef.write(toFile: filePath) { url, error in
+            
+            completion(error == nil)
+        }
+    }
+    
     static func deleteProfileMeasurements( completion: @escaping (_ success: Bool) -> Void) {
         
         let ref = Database.database().reference()
@@ -105,6 +147,25 @@ class FirebaseService: NSObject {
         let measurementsNewChild = ref.child("users").child("\(userID)")
         
         measurementsNewChild.setValue(nil) { (error, databaseRef) in
+            
+            completion(error == nil)
+        }
+    }
+    
+    static func deleteProfileImage(completion: @escaping (_ success: Bool) -> Void) {
+        
+        let storage = Storage.storage()
+        
+        let storageRef = storage.reference()
+        
+        let ref = Database.database().reference()
+        
+        let userID = Auth.auth().currentUser?.uid ?? ""
+        
+        let imageRef = storageRef.child("images/user-\(userID)/ProfileImage.png")
+        
+        // Delete the file
+        imageRef.delete { error in
             
             completion(error == nil)
         }

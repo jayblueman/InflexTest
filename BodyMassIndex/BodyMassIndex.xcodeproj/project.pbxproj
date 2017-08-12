@@ -17,6 +17,7 @@
 		B12E0E331F3DE3250075A26C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E311F3DE3250075A26C /* RegistrationViewController.swift */; };
 		B12E0E341F3DE3250075A26C /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12E0E321F3DE3250075A26C /* RegistrationViewController.xib */; };
 		B12E0E361F3DEA720075A26C /* RegistrationDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E0E351F3DEA720075A26C /* RegistrationDataInteractor.swift */; };
+		B147D4551F3F1CCD00D9021F /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147D4541F3F1CC600D9021F /* FileManagerExtension.swift */; };
 		B14AD05F1F39A58B00C2C280 /* MeasurementListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD05A1F39A58B00C2C280 /* MeasurementListEventHandler.swift */; };
 		B14AD0601F39A58B00C2C280 /* MeasurementListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD05B1F39A58B00C2C280 /* MeasurementListPresenter.swift */; };
 		B14AD0611F39A58B00C2C280 /* MeasurementListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AD05C1F39A58B00C2C280 /* MeasurementListRouter.swift */; };
@@ -99,6 +100,7 @@
 		B12E0E311F3DE3250075A26C /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		B12E0E321F3DE3250075A26C /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		B12E0E351F3DEA720075A26C /* RegistrationDataInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationDataInteractor.swift; sourceTree = "<group>"; };
+		B147D4541F3F1CC600D9021F /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		B14AD05A1F39A58B00C2C280 /* MeasurementListEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListEventHandler.swift; sourceTree = "<group>"; };
 		B14AD05B1F39A58B00C2C280 /* MeasurementListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListPresenter.swift; sourceTree = "<group>"; };
 		B14AD05C1F39A58B00C2C280 /* MeasurementListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementListRouter.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				B14AD0851F39BC1600C2C280 /* DateExtension.swift */,
 				B1DAE22C1F3CB391002043F3 /* StringExtension.swift */,
 				B1D76FE81F3DB51D00698299 /* UIViewControllerExtension.swift */,
+				B147D4541F3F1CC600D9021F /* FileManagerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				B14AD0921F39FCE300C2C280 /* AddMeasurementEventHandler.swift in Sources */,
 				B14AD0821F39B64200C2C280 /* MeasurementListCellTableViewCell.swift in Sources */,
 				B1DAE22D1F3CB391002043F3 /* StringExtension.swift in Sources */,
+				B147D4551F3F1CCD00D9021F /* FileManagerExtension.swift in Sources */,
 				B14AD09A1F39FCF400C2C280 /* AddMeasurementViewController.swift in Sources */,
 				B1D76FE51F3DABE300698299 /* AddMeasurementDataInteractor.swift in Sources */,
 				B14AD0961F39FCE300C2C280 /* AddMeasurementWireframe.swift in Sources */,
