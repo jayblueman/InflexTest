@@ -7,16 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AddMeasurementDataInteractorResult : class {
 
-    func measurementDidStored()
+    func measurementDidStored(withIdentifier identifier: String)
     
     func measurementStoreFailed()
     
     func profileUpdated()
     
     func profileUpdateFailed()
+    
+    func imageUploaded()
+    
+    func imageUploadFailed()
 }
 
 class AddMeasurementDataInteractor {
@@ -25,17 +30,27 @@ class AddMeasurementDataInteractor {
     
     func store(measurement: Measurement) {
         
-        FirebaseService.addMeasurement(measurement: measurement) { [unowned self] (isSuccess: Bool) in
+        FirebaseService.addMeasurement(measurement: measurement) { [unowned self] (isSuccess: Bool, measurementId: String) in
             
-            isSuccess ? self.presenter?.measurementDidStored() : self.presenter?.measurementStoreFailed()
+            isSuccess ? self.presenter?.measurementDidStored(withIdentifier: measurementId) : self.presenter?.measurementStoreFailed()
         }
     }
     
-    func updateProfiel() {
+    func updateProfile() {
         
-        FirebaseService.updateProfileData { (isSuccess: Bool) in
+        FirebaseService.updateProfileData { [unowned self] (isSuccess: Bool) in
             
             isSuccess ? self.presenter?.profileUpdated() : self.presenter?.profileUpdateFailed()
+        }
+    }
+    
+    func upload(image: UIImage, name: String) {
+        
+        FileManager.store(image: image, withFilename: name)
+        
+        FirebaseService.upload(imageName: name) { [unowned self]  (isSuccess: Bool) in
+            
+            isSuccess ? self.presenter?.imageUploaded() : self.presenter?.imageUploadFailed()
         }
     }
 }

@@ -16,6 +16,8 @@ class MeasurementListCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bmiLabel: UILabel!
     
+    @IBOutlet weak var measurementImageView: UIImageView!
+    
     var measurement: Measurement? {
         
         didSet {
@@ -45,6 +47,49 @@ class MeasurementListCellTableViewCell: UITableViewCell {
         self.dateLabel.text = self.measurement?.date.readableFormat() ?? ""
         self.bmiLabel.text = self.measurement?.bmiString ?? ""
         self.weightLabel.text = "\(self.measurement?.weight ?? 0) kg"
+        
+        DispatchQueue.global(qos: .background).async {
+            self.tryToSetMeasurementImage()
+            
+        }
     }
     
+    fileprivate func tryToSetMeasurementImage() {
+        
+        let imageURL = FileManager.filepath(forFilename: self.measurement?.identifier ?? "")
+        
+        if let image = UIImage(contentsOfFile: imageURL.path) {
+            
+            DispatchQueue.main.async {
+                self.measurementImageView.image = image
+            }
+        } else {
+            DispatchQueue.main.async {
+                
+            self.measurementImageView.image = UIImage(named: "defaultImage")
+            }
+            
+            self.downloadMeasurementImage()
+        }
+        
+    }
+    
+    fileprivate func downloadMeasurementImage() {
+        
+        FirebaseService.download(imageName: self.measurement?.identifier ?? "") { (isSuccess) in
+            
+            let imageURL = FileManager.filepath(forFilename: self.measurement?.identifier ?? "")
+            
+            if let image = UIImage(contentsOfFile: imageURL.path) {
+                DispatchQueue.main.async {
+                    self.measurementImageView.image = image
+                }
+                
+            } else {
+                DispatchQueue.main.async {
+                    self.measurementImageView.image = UIImage(named: "defaultImage")
+                }
+            }
+        }
+    }
 }

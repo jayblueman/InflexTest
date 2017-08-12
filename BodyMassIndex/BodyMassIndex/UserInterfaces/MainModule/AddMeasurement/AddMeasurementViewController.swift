@@ -27,6 +27,12 @@ class AddMeasurementViewController: UIViewController {
         self.addMeasureButton.isEnabled = false
         
         self.weightTextField.addTarget(self, action: #selector(textFieldTextDidChange), for: .editingChanged)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: #selector(cameraButtonPressed))
+    }
+    
+    func cameraButtonPressed() {
+        self.eventHandler?.cameraButtonPressed()
     }
     
     func textFieldTextDidChange() {
@@ -56,5 +62,42 @@ extension AddMeasurementViewController: AddMeasurementView {
     func disableAddButton() {
         
         self.addMeasureButton.isEnabled = false
+    }
+    
+    func showCamera() {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }else  if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+}
+
+extension AddMeasurementViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            self.eventHandler?.imagePickerController(didFinishPickingImage: image)
+        }
+        
+        dismiss(animated:true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        dismiss(animated:true, completion: nil)
     }
 }

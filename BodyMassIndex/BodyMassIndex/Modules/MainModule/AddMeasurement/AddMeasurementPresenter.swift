@@ -7,6 +7,7 @@
 //
 
 import Foundation 
+import UIKit
 
 class AddMeasurementPresenter {
 
@@ -16,6 +17,8 @@ class AddMeasurementPresenter {
 
     fileprivate var addMeasurementDataInteractor = AddMeasurementDataInteractor()
     var measurementToSave = Measurement(dictionary: ["date":Date()])
+    
+    var imageToUpload: UIImage?
     
     init(view: AddMeasurementView?, router: AddMeasurementRouter?) {
 
@@ -72,26 +75,39 @@ extension AddMeasurementPresenter: AddMeasurementEventHandler {
         
         self.addMeasurementDataInteractor.store(measurement: self.measurementToSave)
     }
+    
+    func cameraButtonPressed() {
+        
+        self.view?.showCamera()
+    }
+    
+    func imagePickerController(didFinishPickingImage image: UIImage) {
+        
+        self.imageToUpload = image
+    }
 }
 
 extension AddMeasurementPresenter: AddMeasurementDataInteractorResult {
     
-    func measurementDidStored() {
+    func measurementDidStored(withIdentifier identifier: String) {
         
-        if self.measurementToSave.date.isToday() {
+        if self.imageToUpload == nil {
             
-            ProfileManager.shared.profile?.weight = self.measurementToSave.weight
-            
-            self.addMeasurementDataInteractor.updateProfiel()
-            
+            if self.measurementToSave.date.isToday() {
+                
+                ProfileManager.shared.profile?.weight = self.measurementToSave.weight
+                
+                self.addMeasurementDataInteractor.updateProfile()
+                
+            } else {
+                
+                self.view?.hideLoader()
+                
+                self.router?.popBack()
+            }
         } else {
-            
-            self.view?.hideLoader()
-            
-            self.router?.popBack()
+            self.addMeasurementDataInteractor.upload(image: self.imageToUpload!, name: identifier)
         }
-        
-        
     }
     
     func measurementStoreFailed() {
@@ -115,5 +131,26 @@ extension AddMeasurementPresenter: AddMeasurementDataInteractorResult {
         print("faild to store")
     }
     
+    func imageUploaded() {
+        
+        if self.measurementToSave.date.isToday() {
+            
+            ProfileManager.shared.profile?.weight = self.measurementToSave.weight
+            
+            self.addMeasurementDataInteractor.updateProfile()
+            
+        } else {
+            
+            self.view?.hideLoader()
+            
+            self.router?.popBack()
+        }
+    }
     
+    func imageUploadFailed() {
+        
+        self.view?.hideLoader()
+        
+        print("faild to store")
+    }
 }

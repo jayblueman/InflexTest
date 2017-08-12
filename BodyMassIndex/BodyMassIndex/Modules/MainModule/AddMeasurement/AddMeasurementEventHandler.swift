@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol AddMeasurementEventHandler {
     
@@ -15,4 +16,6 @@ protocol AddMeasurementEventHandler {
     
     func addButtonPressed()
     
+    func cameraButtonPressed()
+    func imagePickerController(didFinishPickingImage image: UIImage)
 }

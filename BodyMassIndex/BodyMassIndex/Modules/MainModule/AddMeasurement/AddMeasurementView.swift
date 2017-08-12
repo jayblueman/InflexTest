@@ -15,5 +15,7 @@ protocol AddMeasurementView: CommonView {
     func enableAddButton()
     
     func disableAddButton()
+    
+    func showCamera()
 }
 

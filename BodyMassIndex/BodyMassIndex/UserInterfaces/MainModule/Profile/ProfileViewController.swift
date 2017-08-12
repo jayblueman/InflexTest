@@ -195,8 +195,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             self.eventHandler?.imagePickerController(didFinishPickingImage: image)
         }
         
-        
-
         dismiss(animated:true, completion: nil)
         
     }

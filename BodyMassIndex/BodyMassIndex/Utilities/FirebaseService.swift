@@ -181,7 +181,7 @@ class FirebaseService: NSObject {
         }
     }
     
-    static func addMeasurement(measurement: Measurement, completion: @escaping (_ isSuccess: Bool) -> Void) {
+    static func addMeasurement(measurement: Measurement, completion: @escaping (_ isSuccess: Bool, _ measurementId: String) -> Void) {
         
         let ref = Database.database().reference()
         
@@ -192,7 +192,7 @@ class FirebaseService: NSObject {
         let measurement = ["userID": userID, "date": measurement.date.readableFormat(), "weight": "\(measurement.weight)", "identifier" : measurementsNewChild.key] as [String : Any]
         measurementsNewChild.updateChildValues(measurement) { (error, databaseRef) in
             
-            completion(error == nil)
+            completion(error == nil, measurementsNewChild.key)
             
         }
     }

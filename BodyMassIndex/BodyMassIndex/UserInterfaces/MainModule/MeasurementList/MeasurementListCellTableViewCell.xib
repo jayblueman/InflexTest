@@ -81,6 +81,7 @@
             <connections>
                 <outlet property="bmiLabel" destination="D8l-f7-dAy" id="q8p-6j-wnc"/>
                 <outlet property="dateLabel" destination="o7B-5L-8eo" id="h6A-Zk-bX3"/>
+                <outlet property="measurementImageView" destination="kjM-Up-a2g" id="5QA-1j-y7U"/>
                 <outlet property="weightLabel" destination="4gL-uY-hll" id="aef-fH-YGa"/>
             </connections>
             <point key="canvasLocation" x="-504" y="-44"/>
