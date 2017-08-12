@@ -137,7 +137,7 @@ extension MeasurementListPresenter: MeasurementListDataInteractorResult {
         
         self.view?.hideLoader()
         
-        self.measurements = measurementList
+        self.measurements = measurementList.sorted(by: {$0.date < $1.date})
         
         if self.measurements.isEmpty {
             
