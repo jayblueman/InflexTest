@@ -25,4 +25,8 @@ protocol MeasurementListEventHandler {
     func removeMeasurement(atIndex index: Int)
     
     func delete(confirmed: Bool, measurement: Measurement)
+    
+    func didTapOnCell(atIndex index: Int)
+    
+    func didTapOnMeasurementImage()
 }

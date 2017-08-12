@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MeasurementListView: CommonView {
 
@@ -23,4 +24,8 @@ protocol MeasurementListView: CommonView {
     func disableAddButton()
     
     func showDeleteConfirmAlert(withMeasurement measurement: Measurement)
+    
+    func displayMeasurementImage(image: UIImage)
+    
+    func hideMeasurementImage()
 }

@@ -13,6 +13,9 @@ class MeasurementListViewController: UIViewController {
     @IBOutlet weak var emptyScreenPlaceholder: UIView!
     @IBOutlet weak var placeHolderTextLabel: UILabel!
     
+    @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var measurementImage: UIImageView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var eventHandler: MeasurementListEventHandler?
@@ -32,6 +35,13 @@ class MeasurementListViewController: UIViewController {
         if( traitCollection.forceTouchCapability == .available){
             
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnMeasurementImage))
+        
+        self.imageContainer.isUserInteractionEnabled = true
+        self.measurementImage.isUserInteractionEnabled = true
+        
+        self.measurementImage.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +54,11 @@ class MeasurementListViewController: UIViewController {
         super.viewDidAppear(animated)
         
         self.eventHandler?.viewDidAppear()
+    }
+    
+    func didTapOnMeasurementImage() {
+        
+        self.eventHandler?.didTapOnMeasurementImage()
     }
     
     func addButtonPressed() {
@@ -110,6 +125,17 @@ extension MeasurementListViewController: MeasurementListView {
         
         self.tabBarController?.present(alertController, animated: true, completion: nil)
     }
+    
+    func displayMeasurementImage(image: UIImage) {
+        
+        self.measurementImage.image = image
+        self.imageContainer.isHidden = false
+    }
+    
+    func hideMeasurementImage() {
+        
+        self.imageContainer.isHidden = true
+    }
 }
 
 extension MeasurementListViewController: UITableViewDataSource {
@@ -128,9 +154,17 @@ extension MeasurementListViewController: UITableViewDataSource {
         
         cell.measurement = self.eventHandler?.measurement(forIndex: indexPath.row)
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
         return cell
     }
 }
 
 extension MeasurementListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.eventHandler?.didTapOnCell(atIndex: indexPath.row)
+        
+    }
 }

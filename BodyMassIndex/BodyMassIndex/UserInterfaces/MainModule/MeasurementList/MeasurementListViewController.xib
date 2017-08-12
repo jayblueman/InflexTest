@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeasurementListViewController">
             <connections>
                 <outlet property="emptyScreenPlaceholder" destination="It4-5h-zYl" id="97M-X1-RAj"/>
+                <outlet property="imageContainer" destination="ePL-aJ-CDU" id="khA-ah-paD"/>
+                <outlet property="measurementImage" destination="6PP-Ka-moe" id="Lvq-RM-c2i"/>
                 <outlet property="placeHolderTextLabel" destination="t5R-Oi-zeQ" id="lXE-dg-9ra"/>
                 <outlet property="tableView" destination="7G6-6I-Igt" id="6UY-cU-V34"/>
                 <outlet property="view" destination="ygm-Mz-eRR" id="hXv-78-fJv"/>
@@ -50,20 +52,39 @@
                         <outlet property="delegate" destination="-1" id="NCv-GQ-f25"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePL-aJ-CDU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6PP-Ka-moe">
+                            <rect key="frame" x="8" y="8" width="359" height="538"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6PP-Ka-moe" firstAttribute="leading" secondItem="ePL-aJ-CDU" secondAttribute="leading" constant="8" id="03N-Sm-dXC"/>
+                        <constraint firstItem="6PP-Ka-moe" firstAttribute="top" secondItem="ePL-aJ-CDU" secondAttribute="top" constant="8" id="2bT-D5-zRB"/>
+                        <constraint firstAttribute="bottom" secondItem="6PP-Ka-moe" secondAttribute="bottom" constant="8" id="3qP-qz-3Kj"/>
+                        <constraint firstAttribute="trailing" secondItem="6PP-Ka-moe" secondAttribute="trailing" constant="8" id="oG8-7F-WUF"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.4437840555" green="1" blue="0.61687597049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="ePL-aJ-CDU" secondAttribute="bottom" id="35Y-db-4yw"/>
                 <constraint firstItem="7G6-6I-Igt" firstAttribute="leading" secondItem="ygm-Mz-eRR" secondAttribute="leading" id="5Tf-7X-iGL"/>
                 <constraint firstItem="7G6-6I-Igt" firstAttribute="top" secondItem="ygm-Mz-eRR" secondAttribute="top" id="7lB-Mw-W21"/>
                 <constraint firstAttribute="trailing" secondItem="7G6-6I-Igt" secondAttribute="trailing" id="Y1Z-GU-FdV"/>
                 <constraint firstAttribute="bottom" secondItem="7G6-6I-Igt" secondAttribute="bottom" id="fnJ-rs-XV9"/>
                 <constraint firstItem="It4-5h-zYl" firstAttribute="centerX" secondItem="ygm-Mz-eRR" secondAttribute="centerX" id="hDV-s0-69j"/>
+                <constraint firstItem="ePL-aJ-CDU" firstAttribute="top" secondItem="ygm-Mz-eRR" secondAttribute="top" id="igy-M6-KMf"/>
+                <constraint firstAttribute="trailing" secondItem="ePL-aJ-CDU" secondAttribute="trailing" id="pPL-uT-LbI"/>
+                <constraint firstItem="ePL-aJ-CDU" firstAttribute="leading" secondItem="ygm-Mz-eRR" secondAttribute="leading" id="qVN-8q-7zB"/>
                 <constraint firstItem="It4-5h-zYl" firstAttribute="centerY" secondItem="ygm-Mz-eRR" secondAttribute="centerY" id="yJf-aO-uUQ"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-            <point key="canvasLocation" x="-553" y="88"/>
+            <point key="canvasLocation" x="-553.5" y="87.5"/>
         </view>
     </objects>
 </document>

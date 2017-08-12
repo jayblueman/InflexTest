@@ -7,6 +7,7 @@
 //
 
 import Foundation 
+import UIKit
 
 class MeasurementListPresenter {
     
@@ -61,6 +62,9 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
     func viewWillAppear() {
         
         self.view?.refreshTableView()
+        
+        self.view?.hideMeasurementImage()
+        
     }
     
     func numberOfElementsInTheList() -> Int {
@@ -97,6 +101,22 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
             self.measurementListDataInteractor.delete(measurement: measurement)
             
         }
+    }
+    
+    func didTapOnCell(atIndex index: Int) {
+        
+        let measurement = measurements[index]
+        
+        let imageURL = FileManager.filepath(forFilename: measurement.identifier ?? "")
+        
+        if let image = UIImage(contentsOfFile: imageURL.path) {
+            self.view?.displayMeasurementImage(image: image)
+        }
+    }
+    
+    func didTapOnMeasurementImage() {
+        
+        self.view?.hideMeasurementImage()
     }
 }
 
