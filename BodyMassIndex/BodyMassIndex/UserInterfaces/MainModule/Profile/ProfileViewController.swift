@@ -156,7 +156,7 @@ extension ProfileViewController: ProfileView {
             self.present(imagePicker, animated: true, completion: nil)
             
         }else  if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary;
             imagePicker.allowsEditing = true

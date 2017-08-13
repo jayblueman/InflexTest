@@ -107,7 +107,7 @@ extension MeasurementListPresenter: MeasurementListEventHandler {
         
         let measurement = measurements[index]
         
-        let imageURL = FileManager.filepath(forFilename: measurement.identifier ?? "")
+        let imageURL = FileManager.filepath(forFilename: measurement.identifier)
         
         if let image = UIImage(contentsOfFile: imageURL.path) {
             self.view?.displayMeasurementImage(image: image)

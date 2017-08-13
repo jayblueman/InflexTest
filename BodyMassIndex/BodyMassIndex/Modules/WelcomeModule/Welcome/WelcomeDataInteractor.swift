@@ -27,7 +27,7 @@ class WelcomeDataInteractor {
         
         FacebookService().login {  [unowned self] (isSuccessful: Bool) in
             
-            if !isSuccessful {
+            guard isSuccessful else {
                 self.presenter?.loginFailed()
                 return
             }
@@ -36,7 +36,7 @@ class WelcomeDataInteractor {
             
             FirebaseService.signIn(completion: {  [unowned self] (isSuccessful: Bool, userProfile) in
                 
-                if !isSuccessful {
+                guard isSuccessful else {
                     self.presenter?.loginFailed()
                     return
                 }
@@ -45,7 +45,7 @@ class WelcomeDataInteractor {
                 
                 FirebaseService.retrieveProfile(completion: {  [unowned self](isSuccess, retrievedProfile) in
                     
-                    if !isSuccessful {
+                    guard isSuccessful else {
                         self.presenter?.loginFailed()
                         return
                     }

@@ -31,7 +31,7 @@ struct Measurement {
         let dateString = dictionary["date"] as? String
         
         self.identifier = dictionary["identifier"] as? String ?? "identifier"
-        self.date = dateString?.dateFromString() ?? Date()
+        self.date = dateString?.dateValue() ?? Date()
         
         let weightString = dictionary["weight"] as? String ?? "0.0"
         

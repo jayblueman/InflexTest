@@ -32,6 +32,7 @@ class ProfileDataInteractor {
     
     weak var presenter: ProfileDataInteractorResult?
     
+    //TODO: remove images from the server
     func deleteProfile() {
         
         self.deleteProfileMeasurements()

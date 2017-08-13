@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 import FacebookCore
 
 class FirebaseService: NSObject {
@@ -59,9 +60,6 @@ class FirebaseService: NSObject {
                 let name = dictionary["name"] as? String ?? ""
                 let weight = Int(dictionary["weight"] as? String ?? "0") ?? 0
                 
-                //TODO
-                let profilePicture = dictionary["profilePicture"] as? String ?? ""
-                
                 let profile = Profile(name: name, isMale: isMale, birthDate: dob, weight: weight, profilePicture: "", height: height)
                 
                 completion(true, profile)
@@ -104,13 +102,11 @@ class FirebaseService: NSObject {
         
         let storageRef = storage.reference()
         
-        let ref = Database.database().reference()
-        
         let userID = Auth.auth().currentUser?.uid ?? ""
         
         let imageRef = storageRef.child("images/user-\(userID)/\(imageName).png")
         
-        let uploadTask = imageRef.putFile(from: filePath, metadata: nil) { metadata, error in
+        _ = imageRef.putFile(from: filePath, metadata: nil) { metadata, error in
             
             completion(error == nil)
         }
@@ -125,14 +121,11 @@ class FirebaseService: NSObject {
         
         let storageRef = storage.reference()
         
-        let ref = Database.database().reference()
-        
         let userID = Auth.auth().currentUser?.uid ?? ""
         
         let imageRef = storageRef.child("images/user-\(userID)/\(imageName).png")
         
-        // Download to the local filesystem
-        let downloadTask = imageRef.write(toFile: filePath) { url, error in
+        _ = imageRef.write(toFile: filePath) { url, error in
             
             completion(error == nil)
         }
@@ -157,8 +150,6 @@ class FirebaseService: NSObject {
         let storage = Storage.storage()
         
         let storageRef = storage.reference()
-        
-        let ref = Database.database().reference()
         
         let userID = Auth.auth().currentUser?.uid ?? ""
         
